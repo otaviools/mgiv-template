@@ -23,6 +23,21 @@
   margin-bottom: 20px;
 }
 
+@media (min-width: 800px) and (max-width: 1600px) {
+  .introducao-bg {
+    padding-top: 260px;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1600px) {
+  .introducao-bg {
+    padding-top: 180px;
+  }
+  .introducao-conteudo br {
+    display: none;
+  }
+}
+
 @media (max-width: 450px) {
   .introducao-bg {
     padding-top: 220px;
@@ -41,20 +56,5 @@
   }
   .introducao-botoes {
     justify-content: left;
-  }
-}
-
-@media (min-width: 450px) and (max-width: 1600px) {
-  .introducao-bg {
-    padding-top: 180px;
-  }
-  .introducao-conteudo br {
-    display: none;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1600px) {
-  .introducao-bg {
-    padding-top: 260px;
   }
 }

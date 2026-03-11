@@ -85,4 +85,7 @@
   .servico-card {
     padding: 32px;
   }
+  .servico-card:hover {
+    border: 1px solid var(--cor-0);
+  }
 }
