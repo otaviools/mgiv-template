@@ -82,4 +82,7 @@
     grid-template-columns: 1fr;
     padding-top: 40px;
   }
+  .servico-card {
+    padding: 32px;
+  }
 }
