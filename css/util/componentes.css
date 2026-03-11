@@ -1,0 +1,109 @@
+.container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 36px;
+  background: linear-gradient(#72b5ff, #3a98ff);
+  box-shadow: 8px 8px 0px var(--cor-p1);
+  text-transform: uppercase;
+  color: var(--cor-p1);
+  font:
+    500 1.125rem/1.35 "Poppins",
+    sans-serif;
+  max-width: max-content;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.botao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--cor-p5);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.botao:hover::before {
+  opacity: 1;
+}
+
+.botao::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../img/icones/arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.botao:hover::after {
+  transform: translateX(6px);
+}
+
+.botao-vazado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0px;
+  padding: 20px 50px;
+  background: transparent;
+  border: 1px solid var(--cor-p1);
+  text-transform: uppercase;
+  color: var(--cor-p1);
+  font:
+    500 1.125rem/1.35 "Poppins",
+    sans-serif;
+  max-width: max-content;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.botao-vazado::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--cor-p5);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.botao-vazado:hover::before {
+  transform: scaleX(1);
+}
+
+.botao-vazado:hover {
+  color: var(--cor-p1);
+  border-color: var(--cor-p5);
+}
+
+@media (max-width: 800px) {
+  .botao::after {
+    display: none;
+  }
+
+  .botao,
+  .botao-vazado {
+    padding: 20px 28px;
+  }
+}

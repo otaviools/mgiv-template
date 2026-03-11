@@ -1,0 +1,85 @@
+.servicos-bg {
+  padding-top: 80px;
+  scroll-margin-top: 80px;
+}
+
+.servicos h2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.servicos h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--cor-p5);
+}
+
+.servicos-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 80px;
+  gap: 40px;
+}
+
+.servico-card {
+  background: var(--cor-0);
+  border-radius: 16px;
+  padding: 32px 44px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.servico-card:hover {
+  border: 1px solid var(--cor-p5);
+  transform: translateY(-5px);
+}
+
+.servico-card-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  background: var(--cor-p5);
+  box-shadow: 4px 4px 0px var(--cor-p1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease 0.1s;
+}
+
+.servico-card p {
+  transition: color 0.3s ease-in-out;
+}
+
+.servico-card:hover p {
+  color: var(--cor-p1);
+}
+.servico-card:hover .icon {
+  transform: scale(1.1) rotate(1deg);
+}
+
+@media (max-width: 1200px) {
+  .servicos-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .servicos-cards {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+}

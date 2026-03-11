@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MGIV - Inspeção Veicular !">
+  <title>MGIV - Inspeção Veicular</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preload" href="./fonts/Poppins/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Roboto/roboto-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="./img/logo.svg" width="160" height="77" fetchpriority="high">
+</head>
+
+<body id="home">
+  <header class="header-bg">
+    <div class="header">
+      <a class="logo" href="#home" aria-label="Voltar para Página Inicial">
+        <img src="./img/logo.svg" width="160" height="77" alt="Logo" fetchpriority="high">
+      </a>
+      <nav aria-label="primaria">
+        <ul class="header-menu font-1-m cor-12">
+          <li class="hideMobile"><a href="#home">Início</a></li>
+          <li class="hideMobile"><a href="#sobre">Sobre</a></li>
+          <li class="hideMobile"><a href="#servicos">Serviços</a></li>
+          <li class="hideMobile"><a href="#local">Local</a></li>
+          <li class="hideMobile"><a href="#contato">Contato</a></li>
+          <li class="hideDesktop">
+            <div class=" hideDesktop icon-menu-open">
+              <div class="line-1"></div>
+              <div class="line-2"></div>
+              <div class="line-3"></div>
+            </div>
+          </li>
+        </ul>
+        <ul class="sideBar font-1-m cor-12 header-menu">
+          <li>
+            <div class="icon-menu-close">
+              <div class="line-1"></div>
+              <div class="line-2"></div>
+              <div class="line-3"></div>
+            </div>
+          </li>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#local">Local</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="introducao-bg hidden">
+    <div class="introducao container">
+      <div class="introducao-conteudo">
+        <h1 class="font-1-xxl cor-p1">Inspeção Veicular em Minas Gerais<span class="cor-p5">.</span></h1>
+        <p class="font-2-l cor-10">
+          Empresa com equipe técnica qualificada, certificada e acreditada pelo
+          <span class="cor-p2">Inmetro/ Senatran.</span>
+          <br>Entre em contato e agende seu serviço.
+        </p>
+        <ul class="introducao-botoes">
+          <li><a class="botao hidden" href="#servicos">Serviços</a></li>
+          <li><a class="botao-vazado hidden" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <article class="sobre-bg">
+    <div class="sobre container">
+      <div class="sobre-conteudo hidden" id="sobre">
+        <span class="font-2-l-b cor-8">QUEM SOMOS & DIFERENCIAL</span>
+        <h2 class="font-1-xxl cor-p1">Você regulariza seu <span class="cor-p3">veículo</span> com conforto<span class="cor-p5">.</span></h2>
+        <p class="font-2-l cor-9">Nossa empresa é <span class="cor-9 font-2-l-b">referência em inspeção e regularização veicular</span>, oferecendo suporte técnico completo para quem busca <span class="cor-9 font-2-l-b">segurança e conformidade legal</span>. Além de priorizar o bem-estar do motorista com vestiários 24H e sala de espera confortável, equipada com ar-condicionado e TV.</p>
+        <div class="sobre-vantagens">
+          <div>
+            <img src="./img/icones/qualidade.svg" width="24" height="24" alt="">
+            <h3 class="font-1-m cor-p1">Qualidade</h3>
+            <p class="font-2-s cor-9">Combinamos uma equipe altamente qualificada com a agilidade que o seu transporte exige com facilidade de acesso.</p>
+          </div>
+          <div>
+            <img src="./img/icones/infraestrutura.svg" width="24" height="24" alt="">
+            <h3 class="font-1-m cor-p1">Atendimento</h3>
+            <p class="font-2-s cor-9">Oferecemos uma infraestrutura de ponta com amplo estacionamento e unidade descontaminadora anexada.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="sobre-imagem">
+        <img src="./img/fotos/sobre.webp" fetchpriority="high" width="1400" height="2240" alt="">
+      </div>
+    </div>
+  </article>
+
+  <section class="servicos-bg hidden" id="servicos">
+    <div class="servicos container">
+      <h2 class="font-1-xxl cor-p1">Nossos serviços.</h2>
+      <div class="servicos-cards">
+
+        <div class="servico-card">
+          <div class="servico-card-header">
+            <div class="icon"><img src="./img/icones/modificacao.svg" width="24" height="24" alt=""></div>
+            <h3 class="font-1-l cor-p1">Modificações</h3>
+          </div>
+          <p class="font-2-s cor-9">Regularização técnica completa para veículos rebaixados e motocicletas modificadas com inspeção necessária para alteração.</p>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-card-header">
+            <div class="icon"><img src="./img/icones/pesado.svg" width="24" height="24" alt=""></div>
+            <h3 class="font-1-l cor-p1">Pesados</h3>
+          </div>
+          <p class="font-2-s cor-9">Soluções em engenharia veicular para caminhões, incluindo troca de carroceria, alongamento ou encurtamento de chassi.</p>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-card-header">
+            <div class="icon"><img src="./img/icones/documento.svg" width="24" height="24" alt=""></div>
+            <h3 class="font-1-l cor-p1">Documentos</h3>
+          </div>
+          <p class="font-2-s cor-9">Vistorias rigorosas para a emissão de Laudo Escolar e Laudo Rural. Oferecemos suporte completo para regularizações junto à ANTT e DERR.</p>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-card-header">
+            <div class="icon"><img src="./img/icones/segurança.svg" width="24" height="24" alt=""></div>
+            <h3 class="font-1-l cor-p1">Segurança</h3>
+          </div>
+          <p class="font-2-s cor-9">Inspeção detalhada para veículos leves, pesados e motocicletas que passaram por sinistro.</p>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-card-header">
+            <div class="icon"><img src="./img/icones/veiculos.svg" width="24" height="24" alt=""></div>
+            <h3 class="font-1-l cor-p1">Veículos</h3>
+          </div>
+          <p class="font-2-s cor-9">Soluções completas para toda a frota: de veículos leves e motocicletas a caminhões, carretas e ônibus.</p>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-card-header">
+            <div class="icon"><img src="./img/icones/laudos.svg" width="24" height="24" alt=""></div>
+            <h3 class="font-1-l cor-p1">Certificados</h3>
+          </div>
+          <p class="font-2-s cor-9">Emissão de certificados CIV (Certificado de Inspeção Veicular) e CIPP (Certificado de Inspeção para o Transporte de Produtos Perigosos).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/script.js" defer></script>
+</body>
+
+</html>
