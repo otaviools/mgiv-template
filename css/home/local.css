@@ -1,4 +1,6 @@
 .local-bg {
+  background: url("../../img/icones/dec/bottom-right.svg") no-repeat bottom
+    600px right 200px;
   padding-top: 180px;
 }
 

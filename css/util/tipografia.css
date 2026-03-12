@@ -64,6 +64,7 @@
   font:
     500 0.875rem/1.35 "Poppins",
     sans-serif;
+  letter-spacing: 1.5;
 }
 
 .font-2-xs {
@@ -94,6 +95,7 @@
   font:
     400 1.125rem/1.35 "Roboto",
     sans-serif;
+  letter-spacing: 1.5;
 }
 
 .font-1-m-b {

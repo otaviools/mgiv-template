@@ -1,4 +1,6 @@
 .servicos-bg {
+  background: url("../../img/icones/dec/bottom-left.svg") no-repeat top 500px
+    left 150px;
   padding-top: 80px;
   scroll-margin-top: 80px;
 }

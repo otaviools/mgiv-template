@@ -1,4 +1,6 @@
 .introducao-bg {
+  background: url("../../img/icones/dec/bottom-left.svg") no-repeat top 500px
+    left 200px;
   padding-top: 280px;
   scroll-margin-top: 80px;
 }
@@ -19,18 +21,34 @@
   justify-content: center;
 }
 
+.introducao-botoes a {
+  animation: flutuar 5s ease-in-out infinite 1.5s;
+}
+
 .introducao h1 {
   margin-bottom: 20px;
 }
 
+@keyframes flutuar {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @media (min-width: 800px) and (max-width: 1600px) {
   .introducao-bg {
+    background: none;
     padding-top: 260px;
   }
 }
 
 @media (min-width: 450px) and (max-width: 1600px) {
   .introducao-bg {
+    background: none;
     padding-top: 180px;
   }
   .introducao-conteudo br {
@@ -40,6 +58,7 @@
 
 @media (max-width: 450px) {
   .introducao-bg {
+    background: none;
     padding-top: 220px;
   }
   .introducao h1 {

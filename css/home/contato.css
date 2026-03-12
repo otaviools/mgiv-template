@@ -1,0 +1,46 @@
+.contato-bg {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  scroll-margin-top: -30px;
+}
+
+.contato h2 {
+  margin-bottom: 24px;
+}
+
+.contato p {
+  margin-bottom: 80px;
+}
+
+.contato-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 450px) {
+  .contato-bg {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    scroll-margin-top: 60px;
+  }
+
+  .contato-container {
+    grid-template-columns: 1fr;
+  }
+  .contato p {
+    margin-bottom: 40px;
+  }
+
+  .contato-img img {
+    display: none;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 1200px) {
+  .contato-container {
+    grid-template-columns: 1fr;
+  }
+  .contato-img img {
+    display: none;
+  }
+}
