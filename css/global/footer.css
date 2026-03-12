@@ -69,6 +69,10 @@
   .footer {
     grid-template-columns: 1fr;
   }
+
+  .footer-informacoes {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -81,6 +85,9 @@
   .footer {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .footer-informacoes {
+    display: none;
   }
   .footer-copy {
     margin-top: 0px;
