@@ -1,48 +1,47 @@
-//Script SideBar Mobile
-
+// Sidebar Mobile
 const sidebar = document.querySelector(".sideBar");
 const menuOpen = document.querySelector(".icon-menu-open");
 const menuClose = document.querySelector(".icon-menu-close");
-const sideBarLinks = document.querySelectorAll(".sideBar a");
 
 if (sidebar && menuOpen && menuClose) {
+  const closeSidebar = () => sidebar.classList.remove("active");
+
   menuOpen.addEventListener("click", () => sidebar.classList.add("active"));
-  menuClose.addEventListener("click", () => sidebar.classList.remove("active"));
-  sideBarLinks.forEach((link) =>
-    link.addEventListener("click", () => sidebar.classList.remove("active")),
-  );
+  menuClose.addEventListener("click", closeSidebar);
+  document
+    .querySelectorAll(".sideBar a")
+    .forEach((link) => link.addEventListener("click", closeSidebar));
 }
 
-//Script Scroll Header
+// Scroll Header
 const header = document.querySelector(".header");
-let lastScroll = 0;
+let ticking = false;
 
 window.addEventListener(
   "scroll",
   () => {
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+        ticking = false;
+      });
+      ticking = true;
     }
-
-    lastScroll = currentScroll;
   },
   { passive: true },
 );
 
-//Script Animação Suave
+// Animação Suave
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 },
+);
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
-  });
-});
-const hiddenElements = document.querySelectorAll(".hidden");
-hiddenElements.forEach((el) => observer.observe(el));
+document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));

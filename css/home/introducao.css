@@ -42,7 +42,9 @@
 @media (min-width: 800px) and (max-width: 1600px) {
   .introducao-bg {
     background: none;
-    padding-top: 260px;
+  }
+  .introducao {
+    padding-top: 100px;
   }
 }
 
