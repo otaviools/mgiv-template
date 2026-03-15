@@ -27,6 +27,7 @@
 
 .introducao h1 {
   margin-bottom: 20px;
+  letter-spacing: -3%;
 }
 
 @keyframes flutuar {
