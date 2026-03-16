@@ -48,10 +48,11 @@
 
 @media (max-width: 475px) {
   .carousel {
+    margin: 60px auto;
     -webkit-mask-image: none;
     mask-image: none;
     overflow-x: auto;
-    padding: 20px;
+    padding: 0px 20px;
   }
   .group {
     animation: none;
