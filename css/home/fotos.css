@@ -51,6 +51,7 @@
     -webkit-mask-image: none;
     mask-image: none;
     overflow-x: auto;
+    padding: 20px;
   }
   .group {
     animation: none;
