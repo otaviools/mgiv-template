@@ -1,3 +1,19 @@
+.fotos-bg h2 {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fotos-bg h2::before {
+  content: "";
+  width: 8px;
+  height: 40px;
+  background: var(--cor-p5);
+  display: inline-block;
+  border-radius: 10px;
+}
+
 .carousel {
   margin: 100px auto;
   width: 100%;
