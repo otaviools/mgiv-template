@@ -1,8 +1,10 @@
 .fotos-bg h2 {
-  padding-top: 80px;
+  padding-top: 100px;
   display: flex;
   align-items: center;
-  gap: 20px;
+}
+.fotos-bg h2 > span {
+  margin-left: 12px;
 }
 
 .fotos-bg h2::before {
@@ -12,27 +14,26 @@
   background: var(--cor-p5);
   display: inline-block;
   border-radius: 10px;
+  margin-right: 20px;
 }
 
 .carousel {
-  margin: 100px auto;
+  margin: 60px auto;
   width: 100%;
   display: flex;
-  overflow-x: hidden;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.carousel::-webkit-scrollbar {
+  background: var(--cor-p5);
+  border-radius: 100px;
+  height: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: var(--cor-p1);
+  border-radius: 100px;
 }
 
 .group {
@@ -40,7 +41,6 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
-  animation: spin 30s infinite linear;
   padding-right: 1em;
 }
 
@@ -53,22 +53,13 @@
   border-radius: 5px;
 }
 
-@keyframes spin {
-  from {
-    translate: 0;
-  }
-  to {
-    translate: -100%;
-  }
-}
-
 @media (max-width: 475px) {
   .carousel {
-    margin: 60px auto;
+    margin: 40px auto;
     -webkit-mask-image: none;
     mask-image: none;
     overflow-x: auto;
-    padding: 0px 20px;
+    padding-bottom: 20px;
   }
   .group {
     animation: none;
