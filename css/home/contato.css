@@ -1,11 +1,23 @@
 .contato-bg {
-  padding-top: 60px;
+  padding-top: 100px;
   padding-bottom: 180px;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 60px;
 }
 
 .contato h2 {
   margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contato h2::before {
+  content: "";
+  width: 8px;
+  height: 40px;
+  background: var(--cor-p5);
+  display: inline-block;
+  border-radius: 10px;
 }
 
 .contato p {
@@ -31,9 +43,9 @@
 
 @media (max-width: 450px) {
   .contato-bg {
-    padding-top: 60px;
+    padding-top: 20px;
     padding-bottom: 80px;
-    scroll-margin-top: 120px;
+    scroll-margin-top: 140px;
   }
 
   .contato-container {

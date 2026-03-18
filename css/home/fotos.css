@@ -1,39 +1,13 @@
 .fotos-bg h2 {
-  padding-top: 100px;
-  display: flex;
-  align-items: center;
-}
-.fotos-bg h2 > span {
-  margin-left: 12px;
-}
-
-.fotos-bg h2::before {
-  content: "";
-  width: 8px;
-  height: 40px;
-  background: var(--cor-p5);
-  display: inline-block;
-  border-radius: 10px;
-  margin-right: 20px;
+  padding-top: 60px;
 }
 
 .carousel {
-  margin: 60px auto;
+  margin: 20px auto;
   width: 100%;
   display: flex;
   overflow-x: auto;
   padding-bottom: 10px;
-}
-
-.carousel::-webkit-scrollbar {
-  background: var(--cor-p5);
-  border-radius: 100px;
-  height: 10px;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-  background: var(--cor-p1);
-  border-radius: 100px;
 }
 
 .group {
@@ -54,12 +28,17 @@
 }
 
 @media (max-width: 475px) {
+  .fotos-bg h2 {
+    padding-top: 40px;
+  }
   .carousel {
-    margin: 40px auto;
     -webkit-mask-image: none;
     mask-image: none;
     overflow-x: auto;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
   }
   .group {
     animation: none;

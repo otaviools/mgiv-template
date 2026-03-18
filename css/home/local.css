@@ -1,7 +1,7 @@
 .local-bg {
   background: url("../../img/icones/dec/bottom-right.svg") no-repeat bottom
     600px right 200px;
-  padding-top: 180px;
+  padding-top: 140px;
   scroll-margin-top: 20px;
 }
 
@@ -112,7 +112,7 @@
 @media (max-width: 450px) {
   .local-bg {
     padding-top: 100px;
-    scroll-margin-top: 50px;
+    scroll-margin-top: 60px;
   }
   .local h2 {
     margin-bottom: 40px;
