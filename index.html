@@ -14,7 +14,7 @@
   <link rel="preload" href="./fonts/Roboto/roboto-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/Roboto/roboto-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="./img/logo.svg" fetchpriority="high">
-  <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body id="home">
@@ -155,6 +155,83 @@
     </div>
   </section>
 
+  <section class="avaliacao-bg hidden">
+    <div class="avaliacao container">
+      <div class="cabecalho">
+        <div class="cabecalho-titulo">
+          <h2 class="font-1-xxl cor-p1">O que nossos clientes</h2>
+          <h2 class="font-1-xxl cor-p4">dizem sobre nós</h2>
+        </div>
+        <div class="cabecalho-google">
+          <p class="font-2-s cor-8"><img src="./img/icones/google.svg" width="25" height="25" alt="Google Review">Google Reviews</p>
+          <a href="https://www.google.com/search?q=mgiv+inspecao+veicular&rlz=1C1GCEA_enBR1187BR1187&oq=mgiv+insp&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYOzIGCAMQRRg8MgYIBBBFGEHSAQgyNTc4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x94b3c90e366ac625:0x7a180e5ef3ce1277,1,,,," target="_blank">
+            <p class="font-1-xxl cor-p1">4.9</p>
+          </a>
+          <img class="cabecalho-estrelas" src="./img/icones/stars.svg" width="128" height="20" alt="5 Estrelas.">
+        </div>
+      </div>
+
+      <div class="depoimentos">
+        <div class="depoimento-card hidden">
+          <div class="card-cabecalho">
+            <div class="profile-avatar">AA</div>
+            <div class="profile-info">
+              <h3 class="font-1-x cor-p1">Adriano Augusto</h3>
+              <p class="font-2-xs cor-8">Fev 2026</p>
+            </div>
+          </div>
+          <div class="card-estrelas">
+            <img src="./img/icones/stars.svg" width="128" height="20" alt="5 Estrelas.">
+          </div>
+          <p class="card-texto font-2-s cor-8">
+            Fazer CIV e CIPP entre Uberlândia e BH é aqui.
+          </p>
+          <div class="card-rodape">
+            <p class="font-1-xs cor-6"><img src="./img/icones/check.svg" width="20" height="20" alt="">Avaliação Verificada no Google</p>
+          </div>
+        </div>
+
+        <div class="depoimento-card hidden">
+          <div class="card-cabecalho">
+            <div class="profile-avatar">HH</div>
+            <div class="profile-info">
+              <h3 class="font-1-x cor-p1">Heber Henrique</h3>
+              <p class="font-2-xs cor-8">Jan 2026</p>
+            </div>
+          </div>
+          <div class="card-estrelas">
+            <img src="./img/icones/stars.svg" width="128" height="20" alt="5 Estrelas.">
+          </div>
+          <p class="card-texto font-2-s cor-8">
+            Turma top, atendimento nota 10.
+          </p>
+          <div class="card-rodape">
+            <p class="font-1-xs cor-6"><img src="./img/icones/check.svg" width="20" height="20" alt="">Avaliação Verificada no Google</p>
+          </div>
+        </div>
+
+        <div class="depoimento-card hidden">
+          <div class="card-cabecalho">
+            <div class="profile-avatar">AB</div>
+            <div class="profile-info">
+              <h3 class="font-1-x cor-p1">Ademar Barbosa</h3>
+              <p class="font-2-xs cor-8">Nov 2025</p>
+            </div>
+          </div>
+          <div class="card-estrelas">
+            <img src="./img/icones/stars.svg" width="128" height="20" alt="5 Estrelas.">
+          </div>
+          <p class="card-texto font-2-s cor-8">
+            Ótimo lugar para fazer o seu documento veicular CIV e CIPP.
+          </p>
+          <div class="card-rodape">
+            <p class="font-1-xs cor-6"><img src="./img/icones/check.svg" width="20" height="20" alt="">Avaliação Verificada no Google</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="local-bg hidden" id="local">
     <div class="local container">
       <h2 class="font-1-xxl cor-p1">Localização.</h2>
@@ -209,14 +286,14 @@
         <div class="contato-img">
           <img src="./img/icones/contato/estado-minas.svg" loading="lazy" width="500" height="438" alt="Estados Minas Gerais.">
         </div>
-        <form class="form">
+        <form class="form" method="post" action="./enviar.php">
           <div>
             <label class="cor-9" for="nome">Nome*</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required>
           </div>
           <div>
             <label class="cor-9" for="telefone">Telefone*</label>
-            <input type="text" id="telefone" name="telefone" placeholder="(99) 9999-9999" autocomplete="tel" required>
+            <input type="tel" id="telefone" name="telefone" placeholder="(99) 9999-9999" autocomplete="tel" required>
           </div>
           <div class="col-2">
             <label class="cor-9" for="email">Email*</label>
