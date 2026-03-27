@@ -2,6 +2,8 @@
   background: url("../../img/icones/dec/bottom-right.svg") no-repeat bottom
     600px right 200px;
   padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #efefef;
   scroll-margin-top: 80px;
 }
 
@@ -39,7 +41,7 @@
 
 .local-conteudo {
   background-color: var(--cor-2);
-  padding: 60px 30px;
+  padding: 60px 40px;
   border-radius: 0px 20px 20px 0px;
 }
 
@@ -111,7 +113,8 @@
 
 @media (max-width: 450px) {
   .local-bg {
-    padding-top: 100px;
+    padding-top: 70px;
+    padding-bottom: 40px;
     scroll-margin-top: 60px;
   }
   .local h2 {

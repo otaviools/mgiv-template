@@ -48,7 +48,7 @@ document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
 
 //Scrip Animação Contadores
 function animarContadores() {
-  const isMobile = !window.matchMedia("(min-width: 768px)").matches;
+  const isMobile = !window.matchMedia("(min-width: 350px)").matches;
   const prefereReducao = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;

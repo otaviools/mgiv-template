@@ -2,6 +2,7 @@
   padding-top: 140px;
   padding-bottom: 180px;
   scroll-margin-top: 30px;
+  background-color: var(--cor-0);
 }
 
 .contato h2 {
@@ -43,9 +44,9 @@
 
 @media (max-width: 450px) {
   .contato-bg {
-    padding-top: 80px;
+    padding-top: 70px;
     padding-bottom: 80px;
-    scroll-margin-top: 80px;
+    scroll-margin-top: 60px;
   }
 
   .contato-container {
@@ -53,6 +54,7 @@
   }
   .contato p {
     margin-bottom: 40px;
+    max-width: 340px;
   }
 
   .contato-img img {

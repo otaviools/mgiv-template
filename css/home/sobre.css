@@ -30,6 +30,7 @@
 .sobre-conteudo {
   padding-top: 180px;
   padding-bottom: 160px;
+  scroll-margin-top: -20px;
 }
 
 .sobre-conteudo > span {

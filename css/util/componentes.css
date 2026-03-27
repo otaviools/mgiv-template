@@ -81,6 +81,16 @@
   border-color: var(--cor-p5);
 }
 
+.botao-sucesso {
+  background-color: #1fc068;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 @media (max-width: 800px) {
   .botao::after {
     display: none;

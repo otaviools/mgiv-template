@@ -1,5 +1,6 @@
 .avaliacao-bg {
   padding-top: 140px;
+  padding-bottom: 140px;
 }
 
 .cabecalho {
@@ -122,13 +123,15 @@
     grid-column: 1/-1;
   }
   .card-cabecalho::after {
-    display: none;
+    left: 240px;
+    top: -20px;
   }
 }
 
 @media (max-width: 800px) {
   .avaliacao-bg {
     padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .cabecalho {
