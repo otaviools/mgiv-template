@@ -40,9 +40,17 @@
   border-radius: 12px;
   padding: 44px 60px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
+
+.depoimento-card:hover {
+  border: 1px solid var(--cor-p4);
+  transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .card-cabecalho {
@@ -50,6 +58,15 @@
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.card-cabecalho::after {
+  content: "“";
+  position: absolute;
+  font-size: 8rem;
+  color: var(--cor-1);
+  left: 220px;
 }
 
 .profile-avatar {
@@ -104,23 +121,21 @@
   .depoimento-card:nth-child(3) {
     grid-column: 1/-1;
   }
+  .card-cabecalho::after {
+    display: none;
+  }
 }
 
 @media (max-width: 800px) {
   .avaliacao-bg {
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   .cabecalho {
     grid-template-columns: 1fr;
     gap: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
-
-  .cabecalho-titulo h2:nth-child(1)::before {
-    display: none;
-  }
-
   .cabecalho-google {
     display: none;
   }
@@ -137,5 +152,11 @@
   .card-texto {
     max-width: 100%;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cabecalho-titulo h2 {
+    font-size: 1.5rem;
   }
 }

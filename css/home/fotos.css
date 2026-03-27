@@ -1,49 +1,130 @@
-.fotos-bg h2 {
-  padding-top: 60px;
+.fotos-bg {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: var(--cor-0);
 }
 
-.carousel {
-  margin: 20px auto;
-  width: 100%;
-  display: flex;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.group {
-  display: flex;
+.fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  gap: 1em;
-  padding-right: 1em;
 }
 
-.card {
-  flex: 0 0 auto;
-  width: 460px;
+.imagens {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.card img {
-  border-radius: 5px;
+.imagens img {
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-@media (max-width: 475px) {
-  .fotos-bg h2 {
-    padding-top: 40px;
+.historia h2 {
+  margin-bottom: 60px;
+  letter-spacing: -3%;
+  position: relative;
+}
+
+.historia h2::before {
+  content: "";
+  width: 100px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: var(--cor-p4);
+  position: absolute;
+  top: -30px;
+}
+
+.status {
+  display: flex;
+  gap: 60px;
+  margin-top: 80px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat + .stat {
+  padding-left: 32px;
+  border-left: 2px solid var(--cor-3);
+}
+
+@media (min-width: 375px) and (max-width: 1200px) {
+  .fotos {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "historia"
+      "imagens";
   }
-  .carousel {
-    -webkit-mask-image: none;
-    mask-image: none;
+
+  .historia {
+    grid-area: historia;
+  }
+
+  .imagens {
+    grid-area: imagens;
+  }
+
+  .imagens {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     overflow-x: auto;
-    padding-bottom: 60px;
   }
-  .carousel::-webkit-scrollbar {
+
+  .imagens img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 500 / 350;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 450px) {
+  .fotos-bg {
+    padding-bottom: 80px;
+  }
+
+  .historia h2 {
+    margin-bottom: 30px;
+  }
+
+  .historia p {
+    font-size: 1.2rem;
+  }
+
+  .status {
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .status p {
+    font-size: 0.9rem;
+  }
+
+  .stat + .stat {
+    padding-left: 30px;
+  }
+
+  .imagens img {
+    flex-shrink: 0;
+    width: 350px;
+    height: auto;
+    aspect-ratio: 500 / 350;
+    object-fit: cover;
+  }
+
+  .imagens {
+    scrollbar-width: none;
+  }
+
+  .imagens::-webkit-scrollbar {
     display: none;
-  }
-  .group {
-    animation: none;
-  }
-  .card {
-    width: 80vw;
   }
 }

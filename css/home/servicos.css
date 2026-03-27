@@ -2,6 +2,7 @@
   background: url("../../img/icones/dec/bottom-left.svg") no-repeat top 500px
     left 150px;
   padding-top: 80px;
+  padding-bottom: 140px;
   scroll-margin-top: 80px;
 }
 
@@ -81,6 +82,10 @@
 }
 
 @media (max-width: 800px) {
+  .servicos-bg {
+    padding-bottom: 80px;
+  }
+
   .servicos-cards {
     grid-template-columns: 1fr;
     padding-top: 40px;
