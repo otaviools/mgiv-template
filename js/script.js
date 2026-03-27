@@ -75,6 +75,8 @@ function animarContadores() {
         const duracao = 2000;
         const inicio = performance.now();
 
+        el.style.width = el.offsetWidth + "px";
+
         function tick(agora) {
           const progresso = Math.min((agora - inicio) / duracao, 1);
           const ease = 1 - Math.pow(1 - progresso, 3);

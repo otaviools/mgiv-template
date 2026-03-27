@@ -51,7 +51,7 @@
 
 .stat + .stat {
   padding-left: 32px;
-  border-left: 2px solid var(--cor-3);
+  border-left: 2px solid var(--cor-2);
 }
 
 @media (min-width: 375px) and (max-width: 1200px) {
@@ -88,6 +88,7 @@
 
 @media (max-width: 450px) {
   .fotos-bg {
+    padding-top: 100px;
     padding-bottom: 80px;
   }
 
@@ -100,16 +101,16 @@
   }
 
   .status {
-    gap: 30px;
+    gap: 24px;
     margin-top: 40px;
   }
 
   .status p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   .stat + .stat {
-    padding-left: 30px;
+    padding-left: 24px;
   }
 
   .imagens img {
