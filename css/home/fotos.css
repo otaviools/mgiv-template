@@ -2,6 +2,7 @@
   padding-top: 120px;
   padding-bottom: 120px;
   background-color: var(--cor-0);
+  scroll-margin-top: 50px;
 }
 
 .fotos {
@@ -19,6 +20,14 @@
 .imagens img {
   object-fit: cover;
   border-radius: 10px;
+}
+
+.foto-1 {
+  transition: 400ms;
+}
+
+.foto-2 {
+  transition: 800ms;
 }
 
 .historia h2 {

@@ -43,7 +43,13 @@
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 10px 30px;
+}
+
+a.footer-copy {
+  text-decoration: underline;
+  width: max-content;
+  margin-inline: auto;
 }
 
 @media (max-width: 800px) {
