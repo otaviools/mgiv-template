@@ -2,6 +2,7 @@
   background: url("../../img/icones/dec/bottom-left.svg") no-repeat top 500px
     left 200px;
   padding-top: 280px;
+  padding-bottom: 30px;
   scroll-margin-top: 80px;
 }
 
@@ -17,7 +18,7 @@
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 80px;
   justify-content: center;
 }
 
@@ -66,7 +67,7 @@
     padding-bottom: 40px;
   }
   .introducao h1 {
-    max-width: 350px;
+    max-width: 375px;
   }
   .introducao p {
     max-width: 350px;
@@ -79,5 +80,12 @@
   }
   .introducao-botoes {
     justify-content: left;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .introducao h1 {
+    font-size: 1.8rem;
   }
 }
