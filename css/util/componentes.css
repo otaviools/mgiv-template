@@ -13,6 +13,7 @@
   gap: 8px;
   padding: 20px 36px;
   background: linear-gradient(#72b5ff, #3a98ff);
+  box-shadow: 8px 8px 0px var(--cor-p1);
   text-transform: uppercase;
   color: var(--cor-p1);
   font:

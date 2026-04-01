@@ -63,7 +63,7 @@
   border-left: 2px solid var(--cor-2);
 }
 
-@media (min-width: 375px) and (max-width: 1200px) {
+@media (min-width: 344px) and (max-width: 1200px) {
   .fotos {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -106,7 +106,8 @@
   }
 
   .historia p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    max-width: 349px;
   }
 
   .status {

@@ -11,14 +11,19 @@
 }
 
 .introducao-conteudo {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .introducao-botoes {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
-  margin-top: 80px;
+  margin-top: 60px;
   justify-content: center;
 }
 
@@ -26,9 +31,14 @@
   animation: flutuar 5s ease-in-out infinite 1.5s;
 }
 
-.introducao h1 {
-  margin-bottom: 20px;
-  letter-spacing: -3%;
+.introducao-conteudo h1 {
+  margin-bottom: 36px;
+  letter-spacing: -5%;
+  max-width: 916px;
+}
+
+.introducao-conteudo p {
+  max-width: 720px;
 }
 
 @keyframes flutuar {
@@ -55,9 +65,6 @@
     background: none;
     padding-top: 180px;
   }
-  .introducao-conteudo br {
-    display: none;
-  }
 }
 
 @media (max-width: 450px) {
@@ -66,20 +73,18 @@
     padding-top: 220px;
     padding-bottom: 40px;
   }
+  .introducao-conteudo {
+    text-align: left;
+    align-items: flex-start;
+  }
   .introducao h1 {
     max-width: 375px;
   }
   .introducao p {
     max-width: 350px;
   }
-  .introducao-conteudo br {
-    display: none;
-  }
-  .introducao-conteudo {
-    text-align: left;
-  }
   .introducao-botoes {
-    justify-content: left;
+    justify-content: flex-start;
     margin-top: 40px;
   }
 }
