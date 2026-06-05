@@ -2,10 +2,6 @@
 
 > **Landing Page institucional de alta performance, desenvolvida com foco em SEO, acessibilidade e segurança de dados.**
 
-[![Site Online](https://img.shields.io/badge/Site-Online-brightgreen?style=for-the-badge)](https://mgiv.com.br/)
-[![Figma](https://img.shields.io/badge/Design-Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/)
-[![PageSpeed](https://img.shields.io/badge/Performance-100%25-success?style=for-the-badge)](https://pagespeed.web.dev/)
-
 ## 📌 Sobre o Projeto
 A **MGIV** é uma empresa acreditada pelo Inmetro/Senatran especializada em regularização e inspeção veicular. O desafio foi reformular sua presença digital, substituindo um sistema obsoleto por uma solução moderna, rápida e otimizada para conversão.
 
