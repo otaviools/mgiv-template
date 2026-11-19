@@ -275,19 +275,29 @@ function atualizarStatusHorario() {
 atualizarStatusHorario();
 setInterval(atualizarStatusHorario, 60000);
 
-// Âncoras: leva a seção para o centro da tela (descontando o header).
-// Se a seção for mais alta que a tela, alinha o topo dela logo abaixo do header.
+// Âncoras: centraliza o CONTEÚDO da seção na área abaixo do header.
+// Usa a caixa sem o padding vertical: no celular quase toda seção é mais alta
+// que a tela, e alinhar pela seção inteira deixava uma faixa vazia (o padding)
+// no lugar do título. Se o conteúdo não couber, o título fica logo abaixo do header.
 function rolarParaSecao(alvo, suave = true) {
   const header = document.querySelector(".header");
   const alturaHeader = header ? header.offsetHeight : 0;
-  const areaVisivel = window.innerHeight - alturaHeader;
+  const folga = window.innerWidth <= 900 ? 20 : 32;
+  const areaVisivel = window.innerHeight - alturaHeader - folga * 2;
+
+  const estilo = getComputedStyle(alvo);
   const caixa = alvo.getBoundingClientRect();
-  const topo = window.scrollY + caixa.top;
+  const topoConteudo =
+    window.scrollY + caixa.top + parseFloat(estilo.paddingTop);
+  const alturaConteudo =
+    caixa.height -
+    parseFloat(estilo.paddingTop) -
+    parseFloat(estilo.paddingBottom);
 
   const destino =
-    caixa.height < areaVisivel
-      ? topo - alturaHeader - (areaVisivel - caixa.height) / 2
-      : topo - alturaHeader;
+    alturaConteudo < areaVisivel
+      ? topoConteudo - alturaHeader - folga - (areaVisivel - alturaConteudo) / 2
+      : topoConteudo - alturaHeader - folga;
 
   const semMovimento = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
