@@ -91,9 +91,10 @@
   gap: 12px;
   font-family: "Satoshi", ui-serif, Georgia, serif;
   font-size: 12px;
+  font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--texto-3);
+  color: var(--texto);
 }
 
 /* Ícone em quadradinho azul-claro, colorido via máscara */
