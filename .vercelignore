@@ -1,0 +1,8 @@
+# Arquivos que não podem ir para a Vercel
+# enviar.php tem as credenciais SMTP: a Vercel não roda PHP e serviria o código como texto
+enviar.php
+*.php
+PHPMailer/
+PHPMAILER/
+mgiv.zip
+README.md

@@ -1,2 +1,4 @@
 *.php
 PHPMAILER
+PHPMailer/
+mgiv.zip
