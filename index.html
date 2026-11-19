@@ -4,339 +4,404 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MGIV - Inspeção Veicular !">
+  <meta name="theme-color" content="#2a5687">
+  <meta name="description" content="MGIV Inspeção Veicular: inspeção e regularização veicular acreditada pelo Inmetro/Senatran, às margens da BR-262 em Córrego Danta - MG.">
   <title>MGIV - Inspeção Veicular Ltda.</title>
   <link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="./fonts/Poppins/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./fonts/Poppins/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./fonts/Poppins/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./fonts/Poppins/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./fonts/Roboto/roboto-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./fonts/Roboto/roboto-500.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="./img/logo.svg" fetchpriority="high">
+  <link rel="preload" href="./fonts/Satoshi/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Satoshi/Satoshi-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="./img/fotos/hero.webp" media="(min-width: 961px)" fetchpriority="high">
+  <link rel="preload" as="image" href="./img/fotos/hero-mobile.webp" media="(max-width: 960px)" fetchpriority="high">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body id="home">
-  <header class="header-bg">
-    <div class="header">
-      <a class="logo" href="#home" aria-label="Voltar para Página Inicial">
-        <img src="./img/logo.svg" width="160" height="77" alt="Logo">
+  <header class="header">
+    <div class="wrap header-conteudo">
+      <a class="logo" href="#home" aria-label="Voltar para a página inicial">
+        <img class="logo-cor" src="./img/logo/logo-secundaria.svg" width="236" height="99" alt="MGIV Inspeção Veicular">
+        <img class="logo-branca" src="./img/logo/logo-secundaria-fundo-escuro.svg" width="236" height="99" alt="" aria-hidden="true">
       </a>
-      <nav aria-label="primaria">
-        <ul class="header-menu font-1-m cor-12">
-          <li class="hideMobile"><a href="#home">Início</a></li>
-          <li class="hideMobile"><a href="#sobre">Sobre</a></li>
-          <li class="hideMobile"><a href="#servicos">Serviços</a></li>
-          <li class="hideMobile"><a href="#local">Local</a></li>
-          <li class="hideMobile"><a href="#contato">Contato</a></li>
-          <li class="hideDesktop">
-            <div class=" hideDesktop icon-menu-open">
-              <div class="line-1"></div>
-              <div class="line-2"></div>
-              <div class="line-3"></div>
-            </div>
-          </li>
-        </ul>
-        <ul class="sideBar font-1-m cor-12 header-menu">
-          <li>
-            <div class="icon-menu-close">
-              <div class="line-1"></div>
-              <div class="line-2"></div>
-              <div class="line-3"></div>
-            </div>
-          </li>
-          <li><a href="#home">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#local">Local</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+      <nav class="menu" id="menu" aria-label="primária">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#local">Local</a>
+        <a href="#avaliacao">Avaliações</a>
+        <a href="#contato">Contato</a>
+        <a class="botao menu-cta" href="#contato">Agendar</a>
       </nav>
+      <a class="botao header-cta" href="#contato">Agendar</a>
+      <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main class="introducao-bg hidden">
-    <div class="introducao container">
-      <div class="introducao-conteudo">
-        <h1 class="font-1-xxl cor-p1">Regularize seu veículo com segurança e aprovação garantida<span class="cor-p5">.</span></h1>
-        <p class="font-2-l cor-10">
-          Empresa com equipe técnica qualificada, certificada e acreditada pelo <span class="cor-p2">Inmetro/Senatran,</span> entre em contato e agende seu serviço.
-        </p>
-        <ul class="introducao-botoes">
-          <li><a class="botao hidden" href="#servicos">Serviços</a></li>
-          <li><a class="botao-vazado hidden" href="#contato">Agendar</a></li>
-        </ul>
+  <main>
+    <section class="hero">
+      <picture>
+        <source media="(max-width: 960px)" srcset="./img/fotos/hero-mobile.webp">
+        <img src="./img/fotos/hero.webp" width="2000" height="1334" alt="Carreta em movimento numa rodovia, em tons de sépia" fetchpriority="high">
+      </picture>
+      <div class="wrap hero-conteudo">
+        <div class="hero-texto">
+          <span class="selo"><i></i>Acreditada pelo Inmetro e Senatran</span>
+          <h1>Regularize seu veículo com <span class="destaque">segurança<svg class="sublinhado" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M3 13 C 60 4, 120 3, 180 7 S 270 12, 297 5" />
+              </svg></span><span class="ponto">.</span></h1>
+          <p>Inspeção e regularização veicular com equipe técnica qualificada e certificada, às margens da <span class="nowrap">BR-262</span>.</p>
+          <div class="hero-botoes">
+            <a class="botao botao-claro botao-seta" href="#contato"><span>Agendar<span class="so-desktop"> inspeção</span></span></a>
+            <a class="botao botao-vazado" href="#servicos">Ver serviços</a>
+          </div>
+        </div>
+      </div>
+      <a class="hero-scroll" href="#sobre" aria-label="Rolar para Sobre">Role</a>
+    </section>
+
+    <div class="faixa" aria-hidden="true">
+      <div class="faixa-trilho">
+        <div class="faixa-grupo"><span>Inspeção CIV</span><span>Certificado CIPP</span><span>Veículos modificados</span><span>Laudo Escolar</span><span>Laudo Rural</span><span>Veículos pesados</span><span>Sinistro</span></div>
+        <div class="faixa-grupo"><span>Inspeção CIV</span><span>Certificado CIPP</span><span>Veículos modificados</span><span>Laudo Escolar</span><span>Laudo Rural</span><span>Veículos pesados</span><span>Sinistro</span></div>
       </div>
     </div>
+
+    <section class="secao sobre fundo-grade" id="sobre">
+      <span class="pontilhado pontilhado-topo-dir" aria-hidden="true"></span>
+      <span class="pontilhado pontilhado-base-esq" aria-hidden="true"></span>
+      <span class="brilho brilho-direita" aria-hidden="true"></span>
+      <div class="wrap">
+        <div class="sobre-topo hidden">
+          <div>
+            <span class="eyebrow"><span class="eyebrow-num">01</span>Quem somos</span>
+            <h2>Você regulariza seu veículo com conforto<span class="ponto">.</span></h2>
+          </div>
+          <div class="sobre-texto">
+            <p>Desde 2018, a MGIV é referência em inspeção e regularização veicular em Minas Gerais, com suporte técnico completo para quem busca segurança e conformidade legal.</p>
+            <p>Contamos com amplo estacionamento, unidade descontaminadora anexa, vestiários 24h e sala de espera climatizada, para o motorista esperar com conforto.</p>
+          </div>
+        </div>
+        <div class="galeria">
+          <figure class="galeria-destaque revela">
+            <img src="./img/fotos/galpao-inspecao.webp" width="2000" height="1565" alt="Carreta-tanque na linha de inspeção coberta da MGIV, com técnico na plataforma" loading="lazy">
+            <figcaption><span>01</span>Linha de inspeção</figcaption>
+          </figure>
+          <figure class="revela" style="--d: .15s">
+            <img src="./img/fotos/slider2/faixada-principal2-1600.webp" width="1600" height="1120" alt="Carreta-tanque no pátio da MGIV" loading="lazy">
+            <figcaption><span>02</span>Pátio para carretas</figcaption>
+          </figure>
+          <figure class="revela" style="--d: .3s">
+            <img src="./img/fotos/sobre2-cor.webp" width="1260" height="2146" alt="Técnico inspecionando o motor de um veículo" loading="lazy">
+            <figcaption><span>03</span>Técnica certificada</figcaption>
+          </figure>
+        </div>
+        <div class="numeros hidden">
+          <div class="numero"><b>2018</b><span>Fundação</span></div>
+          <div class="numero"><b data-contador>99%</b><span>Satisfação</span></div>
+          <div class="numero"><b data-contador>+500</b><span>Serviços feitos</span></div>
+          <div class="numero"><b data-contador>+8</b><span>Anos de mercado</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao servicos" id="servicos">
+      <span class="pontilhado pontilhado-topo-esq" aria-hidden="true"></span>
+      <span class="pontilhado pontilhado-base-dir" aria-hidden="true"></span>
+      <div class="wrap">
+        <div class="servicos-topo hidden">
+          <div>
+            <span class="eyebrow"><span class="eyebrow-num">02</span>Serviços</span>
+            <h2>O que fazemos<span class="ponto">.</span></h2>
+          </div>
+          <p>Do carro rebaixado à carreta de produtos perigosos, cuidamos de toda a regularização.</p>
+        </div>
+        <ul class="servicos-grade">
+          <li class="servico hidden">
+            <div class="servico-topo">
+              <span class="servico-icone icone-modificacao" aria-hidden="true"></span>
+              <span class="servico-numero">S/01</span>
+            </div>
+            <h3>Modificações</h3>
+            <p>Regularização técnica para veículos rebaixados e motocicletas modificadas, com inspeção e laudo.</p>
+          </li>
+          <li class="servico hidden" style="--d: 0.06s">
+            <div class="servico-topo">
+              <span class="servico-icone icone-pesado" aria-hidden="true"></span>
+              <span class="servico-numero">S/02</span>
+            </div>
+            <h3>Pesados</h3>
+            <p>Engenharia veicular para caminhões: troca de carroceria, alongamento de chassi e mais.</p>
+          </li>
+          <li class="servico hidden" style="--d: 0.12s">
+            <div class="servico-topo">
+              <span class="servico-icone icone-documento" aria-hidden="true"></span>
+              <span class="servico-numero">S/03</span>
+            </div>
+            <h3>Documentos</h3>
+            <p>Vistorias para emissão de Laudo Escolar e Laudo Rural, com suporte completo.</p>
+          </li>
+          <li class="servico hidden" style="--d: 0.18s">
+            <div class="servico-topo">
+              <span class="servico-icone icone-seguranca" aria-hidden="true"></span>
+              <span class="servico-numero">S/04</span>
+            </div>
+            <h3>Segurança</h3>
+            <p>Inspeção detalhada para veículos leves, pesados e motocicletas que passaram por sinistro.</p>
+          </li>
+          <li class="servico hidden" style="--d: 0.24s">
+            <div class="servico-topo">
+              <span class="servico-icone icone-veiculos" aria-hidden="true"></span>
+              <span class="servico-numero">S/05</span>
+            </div>
+            <h3>Veículos</h3>
+            <p>Atendimento para toda a frota: de motos e carros a caminhões, carretas e ônibus.</p>
+          </li>
+          <li class="servico hidden" style="--d: 0.30s">
+            <div class="servico-topo">
+              <span class="servico-icone icone-laudos" aria-hidden="true"></span>
+              <span class="servico-numero">S/06</span>
+            </div>
+            <h3>Certificados</h3>
+            <p>CIV (Inspeção Veicular) e CIPP (Transporte de Produtos Perigosos).</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao local" id="local">
+      <span class="pontilhado pontilhado-topo-dir" aria-hidden="true"></span>
+      <div class="wrap">
+        <div class="local-topo hidden">
+          <div>
+            <span class="eyebrow"><span class="eyebrow-num">03</span>Localização</span>
+            <h2>BR-262, Km 577</h2>
+          </div>
+          <p class="local-status" data-status-horario>
+            <i></i><span>Seg a sex, 08:00 às 17:45</span>
+          </p>
+        </div>
+
+        <div class="local-grid">
+          <div class="local-info hidden">
+            <dl class="local-dados">
+              <div>
+                <dt><span class="local-icone icone-local" aria-hidden="true"></span>Endereço</dt>
+                <dd>Rodovia BR 262, Km 577<br>Zona Rural, Córrego Danta, MG</dd>
+              </div>
+              <div>
+                <dt><span class="local-icone icone-relogio" aria-hidden="true"></span>Horário</dt>
+                <dd class="local-horario"><span>Segunda a Sexta |</span><span>08:00 às 17:45</span></dd>
+              </div>
+              <div>
+                <dt><span class="local-icone icone-acesso" aria-hidden="true"></span>Acesso</dt>
+                <dd>Às margens da rodovia, com pátio coberto para carretas, ônibus e transporte de produtos perigosos.</dd>
+              </div>
+            </dl>
+
+            <div class="local-botoes">
+              <a class="botao botao-seta" href="https://maps.app.goo.gl/Txs4U4tW58k7e5eB7" target="_blank" rel="noopener">Como chegar</a>
+            </div>
+          </div>
+
+          <div class="local-mapa hidden" style="--d: .15s">
+            <div class="local-mapa-img">
+              <img src="./img/icones/contato/estado-minas.svg" width="500" height="438" alt="Mapa de Minas Gerais com a localização da MGIV no Centro-Oeste do estado" loading="lazy">
+              <span class="local-pino" style="left: 46.0%; top: 64.3%"><i></i><span class="local-pino-tag">MGIV · Km 577</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao avaliacao fundo-grade" id="avaliacao">
+      <span class="pontilhado pontilhado-base-esq" aria-hidden="true"></span>
+      <div class="wrap">
+        <div class="avaliacao-topo hidden">
+          <div>
+            <span class="eyebrow"><span class="eyebrow-num">04</span>Avaliações</span>
+            <h2>Quem passou por aqui recomenda<span class="ponto">.</span></h2>
+          </div>
+          <a class="nota" href="https://www.google.com/search?q=mgiv+inspecao+veicular#lrd=0x94b3c90e366ac625:0x7a180e5ef3ce1277,1,,,," target="_blank" rel="noopener">
+            <span class="nota-valor">5.0</span>
+            <span class="nota-detalhe">
+              <img src="./img/icones/stars.svg" width="96" height="15" alt="5 estrelas">
+              <span><img src="./img/icones/google.svg" width="14" height="14" alt="">Google | Ver todas ↗</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="carrossel hidden" style="--d: .15s" aria-roledescription="carrossel" aria-label="Avaliações de clientes">
+          <div class="carrossel-trilho" tabindex="0" aria-label="Depoimentos de clientes">
+            <article class="depoimento depoimento-cor" aria-roledescription="slide" aria-label="1 de 3">
+              <div class="depoimento-topo">
+                <img class="depoimento-estrelas" src="./img/icones/stars.svg" width="96" height="15" alt="5 estrelas">
+                <img class="depoimento-google" src="./img/icones/google.svg" width="20" height="20" alt="Google">
+              </div>
+              <q>Fazer CIV e CIPP entre Uberlândia e BH é aqui.</q>
+              <div class="depoimento-autor">
+                <span class="avatar">AA</span>
+                <div><b>Adriano Augusto</b><small>Fev 2026 · Verificada</small></div>
+              </div>
+            </article>
+            <article class="depoimento depoimento-claro" aria-roledescription="slide" aria-label="2 de 3">
+              <div class="depoimento-topo">
+                <img class="depoimento-estrelas" src="./img/icones/stars.svg" width="96" height="15" alt="5 estrelas">
+                <img class="depoimento-google" src="./img/icones/google.svg" width="20" height="20" alt="Google">
+              </div>
+              <q>Turma top, atendimento nota 10.</q>
+              <div class="depoimento-autor">
+                <span class="avatar">HH</span>
+                <div><b>Heber Henrique</b><small>Jan 2026 · Verificada</small></div>
+              </div>
+            </article>
+            <article class="depoimento depoimento-branco" aria-roledescription="slide" aria-label="3 de 3">
+              <div class="depoimento-topo">
+                <img class="depoimento-estrelas" src="./img/icones/stars.svg" width="96" height="15" alt="5 estrelas">
+                <img class="depoimento-google" src="./img/icones/google.svg" width="20" height="20" alt="Google">
+              </div>
+              <q>Ótimo lugar para fazer o seu documento veicular CIV e CIPP.</q>
+              <div class="depoimento-autor">
+                <span class="avatar">AB</span>
+                <div><b>Ademar Barbosa</b><small>Nov 2025 · Verificada</small></div>
+              </div>
+            </article>
+          </div>
+          <div class="carrossel-controles">
+            <div class="carrossel-pontos" role="group" aria-label="Escolher avaliação"></div>
+            <div class="carrossel-tempo"><span></span></div>
+            <button class="carrossel-seta" type="button" data-dir="-1" aria-label="Avaliação anterior"></button>
+            <button class="carrossel-seta" type="button" data-dir="1" aria-label="Próxima avaliação"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a class="divisor-cta" href="#contato">
+      <span class="wrap divisor-conteudo">
+        <span class="divisor-rotulo">Próximo passo</span>
+        <span class="divisor-titulo">Agende sua inspeção<span class="ponto">.</span></span>
+        <span class="divisor-seta" aria-hidden="true"></span>
+      </span>
+    </a>
+
+    <section class="secao contato" id="contato">
+      <span class="pontilhado" aria-hidden="true"></span>
+      <span class="pontilhado" aria-hidden="true"></span>
+      <div class="wrap">
+        <div class="agenda">
+          <div class="agenda-info hidden">
+            <span class="eyebrow"><span class="eyebrow-num">05</span>Agendamento</span>
+            <h2>Agende seu serviço<span class="ponto">.</span></h2>
+            <p class="agenda-texto">Conte o que precisa e nossa equipe retorna para combinar o melhor horário.</p>
+            <ol class="agenda-passos">
+              <li>
+                <span class="agenda-icone icone-mensagem" aria-hidden="true"></span>
+                <div><b>Envie sua mensagem</b>
+                  <p>Pelo formulário ou pelo WhatsApp.</p>
+                </div>
+              </li>
+              <li>
+                <span class="agenda-icone icone-check" aria-hidden="true"></span>
+                <div><b>Confirmamos o horário</b>
+                  <p>E informamos a documentação necessária.</p>
+                </div>
+              </li>
+              <li>
+                <span class="agenda-icone icone-veiculos" aria-hidden="true"></span>
+                <div><b>Traga seu veículo</b>
+                  <p>Inspeção feita por equipe certificada.</p>
+                </div>
+              </li>
+            </ol>
+            <div class="agenda-rodape">
+              <a class="agenda-whatsapp" href="https://wa.me/5537988536567" target="_blank" rel="noopener">Chamar no WhatsApp <span aria-hidden="true">↗</span></a>
+              <span class="agenda-horario">Seg a sex, 08:00 às 17:45</span>
+            </div>
+          </div>
+          <form class="form agenda-form hidden" style="--d: .15s" method="post" action="./enviar.php">
+            <div>
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Nome e sobrenome" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="DDD + número" autocomplete="tel" maxlength="11" required>
+            </div>
+            <div class="col-2">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@empresa.com.br" autocomplete="email" required>
+            </div>
+            <div class="col-2">
+              <label for="servico">Serviço</label>
+              <div class="select">
+                <select id="servico" name="servico" required>
+                  <option value="" disabled selected>Selecione o serviço</option>
+                  <option value="CIV">CIV - Inspeção Veicular</option>
+                  <option value="CIPP">CIPP - Produtos Perigosos</option>
+                  <option value="Modificação">Veículo modificado</option>
+                  <option value="Pesados">Veículos pesados</option>
+                  <option value="Laudo Escolar">Laudo Escolar</option>
+                  <option value="Laudo Rural">Laudo Rural</option>
+                  <option value="Sinistro">Sinistro</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2">
+              <label for="mensagem">Mensagem</label>
+              <textarea rows="4" id="mensagem" name="mensagem" placeholder="Modelo do veículo, placa ou dúvida" required></textarea>
+            </div>
+            <button type="submit" class="botao botao-seta col-2">Enviar mensagem</button>
+            <p class="col-2 form-aviso">Seus dados são usados só para responder.</p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <article class="sobre-bg hidden">
-    <div class="sobre container">
-      <div class="sobre-conteudo hidden" id="sobre">
-        <span class="font-2-l-b cor-8">QUEM SOMOS & DIFERENCIAL</span>
-        <h2 class="font-1-xxl cor-p1">Você regulariza seu <span class="cor-p5">veículo</span> com conforto<span class="cor-p5">.</span></h2>
-        <p class="font-2-l cor-9">Nossa empresa é <span class="cor-9 font-2-l-b">referência em inspeção e regularização veicular</span>, oferecendo suporte técnico completo para quem busca <span class="cor-9 font-2-l-b">segurança e conformidade legal</span>. Além de priorizar o bem-estar do motorista com vestiários 24H e sala de espera confortável, equipada com ar-condicionado e TV.</p>
-        <div class="sobre-vantagens">
-          <div>
-            <img src="./img/icones/qualidade.svg" width="24" height="22" alt="Qualidade.">
-            <h3 class="font-1-m cor-p1">Qualidade</h3>
-            <p class="font-2-s cor-9">Combinamos uma equipe altamente qualificada com a agilidade que o seu transporte exige com facilidade de acesso.</p>
-          </div>
-          <div>
-            <img src="./img/icones/infraestrutura.svg" width="24" height="22" alt="Infraestrutura.">
-            <h3 class="font-1-m cor-p1">Infraestrutura</h3>
-            <p class="font-2-s cor-9">Oferecemos uma infraestrutura de ponta com amplo estacionamento e unidade descontaminadora anexada.
-            </p>
-          </div>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-marca">
+          <img src="./img/logo/logo-secundaria.svg" width="236" height="99" alt="MGIV Inspeção Veicular" loading="lazy">
+          <p>Inspeção e regularização veicular acreditada pelo Inmetro/Senatran.</p>
         </div>
-      </div>
-      <div class="sobre-imagem">
-        <img src="./img/fotos/sobre2.webp" loading="lazy" width="630" height="1073" alt="Imagem Veículo Sobre.">
-      </div>
-    </div>
-  </article>
-
-  <section class="servicos-bg hidden" id="servicos">
-    <div class="servicos container">
-      <h2 class="font-1-xxl cor-p1">Serviços.</h2>
-      <div class="servicos-cards">
-
-        <div class="servico-card">
-          <div class="servico-card-header">
-            <div class="icon"><img src="./img/icones/modificacao.svg" width="24" height="24" alt="Modificação."></div>
-            <h3 class="font-1-lb cor-p1">Modificações</h3>
-          </div>
-          <p class="font-2-s cor-9">Regularização técnica completa para veículos rebaixados e motocicletas modificadas, com inspeção e laudo.</p>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="https://wa.me/5537988536567" target="_blank" rel="noopener">WhatsApp local</a></li>
+            <li><a href="https://wa.me/5534988248472" target="_blank" rel="noopener">Administração</a></li>
+            <li><a href="mailto:gerencia.mgiv@hotmail.com">E-mail</a></li>
+            <li><a href="https://www.instagram.com/inspecao.veicularmgiv/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
         </div>
-
-        <div class="servico-card">
-          <div class="servico-card-header">
-            <div class="icon"><img src="./img/icones/pesado.svg" width="24" height="24" alt="Pesados."></div>
-            <h3 class="font-1-lb cor-p1">Pesados</h3>
-          </div>
-          <p class="font-2-s cor-9">Soluções em engenharia veicular para caminhões, incluindo troca de carroceria, alongamento, entre outros.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-card-header">
-            <div class="icon"><img src="./img/icones/documento.svg" width="24" height="24" alt="Documentos."></div>
-            <h3 class="font-1-lb cor-p1">Documentos</h3>
-          </div>
-          <p class="font-2-s cor-9">Vistorias para a emissão de Laudo Escolar e Laudo Rural, com suporte completo para regularização.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-card-header">
-            <div class="icon"><img src="./img/icones/segurança.svg" width="24" height="24" alt="Segurança."></div>
-            <h3 class="font-1-lb cor-p1">Segurança</h3>
-          </div>
-          <p class="font-2-s cor-9">Inspeção detalhada para veículos leves, pesados e motocicletas que passaram por sinistro.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-card-header">
-            <div class="icon"><img src="./img/icones/veiculos.svg" width="24" height="24" alt="Veículos."></div>
-            <h3 class="font-1-lb cor-p1">Veículos</h3>
-          </div>
-          <p class="font-2-s cor-9">Soluções completas para toda a frota, sendo veículos leves e motocicletas a caminhões, carretas e ônibus.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-card-header">
-            <div class="icon"><img src="./img/icones/laudos.svg" width="24" height="24" alt="Certificados."></div>
-            <h3 class="font-1-lb cor-p1">Certificados</h3>
-          </div>
-          <p class="font-2-s cor-9">Certificados CIV (Inspeção Veicular) e CIPP (Inspeção para o Transporte de Produtos Perigosos).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="fotos-bg hidden" id="historia">
-    <div class="fotos container">
-      <div class="imagens hidden">
-        <img class="foto-1 hidden" src="./img/fotos/slider2/faixada-principal.webp" width="500" height="350" alt="Fachada principal" loading="lazy">
-        <img class="foto-2 hidden" src="./img/fotos/slider2/faixada-principal2.webp" width="500" height="350" alt="Fachada principal 2" loading="lazy">
-      </div>
-      <div class="historia">
-        <h2 class="font-1-xxl cor-p1 hidden">Conheça a MGIV<span class="cor-p5">.</span></h2>
-        <p class="font-2-l cor-9 hidden">A trajetória da MGIV teve início em 28 de agosto de 2018, com a missão clara de oferecer mais segurança e conformidade técnica para os motoristas e transportadores que cruzam as estradas mineiras.</p>
-        <div class="status">
-          <div class="stat">
-            <h3 class="font-1-xxl cor-p2">99%</h3>
-            <p class="font-2-s cor-9">Satisfação total</p>
-          </div>
-          <div class="stat">
-            <h3 class="font-1-xxl cor-p2">+500</h3>
-            <p class="font-2-s cor-9">Serviços realizados</p>
-          </div>
-          <div class="stat">
-            <h3 class="font-1-xxl cor-p2">+8</h3>
-            <p class="font-2-s cor-9">Anos experiência</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="local-bg hidden" id="local">
-    <div class="local container">
-      <h2 class="font-1-xxl cor-p1">Localização.</h2>
-      <div class="local-container">
-        <div class="local-card">
-          <div class="local-img">
-            <img src="./img/fotos/mapa.svg" loading="lazy" width="500" height="548" alt="Mapa Google">
-          </div>
-          <div class="local-conteudo">
-            <h3 class="font-1-xxl cor-p1">BR-262</h3>
-            <p class="font-2-mr cor-9">Localizada ao lado da BR-262, facilitando o fluxo de transportadoras de produtos perigosos, ônibus e veículos modificados.</p>
-            <p class="font-1-x cor-8"><img src="./img/icones/local/relogio.svg" width="16" height="16" alt="Horário.">Segunda à Sexta - 08:00 - 17:45</p>
-            <p class="font-1-x cor-8"><img src="./img/icones/local/local.svg" width="16" height="16" alt="Local.">Rodovia BR 262, Km 577 Zona Rural, Córrego Danta - MG</p>
-            <a class="botao-vazado hidden" href="https://maps.app.goo.gl/Txs4U4tW58k7e5eB7" target="_blank">VER NO MAPA</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="avaliacao-bg hidden" id="avaliacao">
-    <div class="avaliacao container">
-      <div class="cabecalho">
-        <div class="cabecalho-titulo">
-          <h2 class="font-1-xxl cor-p1">O que nossos clientes</h2>
-          <h2 class="font-1-xxl cor-p4">dizem sobre nós...</h2>
-        </div>
-        <div class="cabecalho-google">
-          <p class="font-2-s cor-8"><img src="./img/icones/google.svg" width="25" height="25" alt="Google Review">Google Reviews</p>
-          <a href="https://www.google.com/search?q=mgiv+inspecao+veicular&rlz=1C1GCEA_enBR1187BR1187&oq=mgiv+insp&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYOzIGCAMQRRg8MgYIBBBFGEHSAQgyNTc4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x94b3c90e366ac625:0x7a180e5ef3ce1277,1,,,," target="_blank">
-            <p class="font-1-xxl cor-p1">4.9</p>
-          </a>
-          <img class="cabecalho-estrelas" src="./img/icones/stars.svg" width="128" height="20" alt="5 Estrelas.">
-        </div>
-      </div>
-
-      <div class="depoimentos">
-        <div class="depoimento-card hidden">
-          <div class="card-cabecalho">
-            <div class="profile-avatar">AA</div>
-            <div class="profile-info">
-              <h3 class="font-1-x cor-p1">Adriano Augusto</h3>
-              <p class="font-2-xs cor-8">Fev 2026</p>
-            </div>
-          </div>
-          <div class="card-estrelas">
-            <img src="./img/icones/stars.svg" width="128" height="20" alt="5 Estrelas.">
-          </div>
-          <p class="card-texto font-2-s cor-8">
-            Fazer CIV e CIPP entre Uberlândia e BH é aqui.
-          </p>
-          <div class="card-rodape">
-            <p class="font-1-xs cor-6"><img src="./img/icones/check.svg" width="20" height="20" alt="">Avaliação Verificada no Google</p>
-          </div>
-        </div>
-
-        <div class="depoimento-card hidden">
-          <div class="card-cabecalho">
-            <div class="profile-avatar">HH</div>
-            <div class="profile-info">
-              <h3 class="font-1-x cor-p1">Heber Henrique</h3>
-              <p class="font-2-xs cor-8">Jan 2026</p>
-            </div>
-          </div>
-          <div class="card-estrelas">
-            <img src="./img/icones/stars.svg" width="128" height="20" alt="5 Estrelas.">
-          </div>
-          <p class="card-texto font-2-s cor-8">
-            Turma top, atendimento nota 10.
-          </p>
-          <div class="card-rodape">
-            <p class="font-1-xs cor-6"><img src="./img/icones/check.svg" width="20" height="20" alt="">Avaliação Verificada no Google</p>
-          </div>
-        </div>
-
-        <div class="depoimento-card hidden">
-          <div class="card-cabecalho">
-            <div class="profile-avatar">AB</div>
-            <div class="profile-info">
-              <h3 class="font-1-x cor-p1">Ademar Barbosa</h3>
-              <p class="font-2-xs cor-8">Nov 2025</p>
-            </div>
-          </div>
-          <div class="card-estrelas">
-            <img src="./img/icones/stars.svg" width="128" height="20" alt="5 Estrelas.">
-          </div>
-          <p class="card-texto font-2-s cor-8">
-            Ótimo lugar para fazer o seu documento veicular CIV e CIPP.
-          </p>
-          <div class="card-rodape">
-            <p class="font-1-xs cor-6"><img src="./img/icones/check.svg" width="20" height="20" alt="">Avaliação Verificada no Google</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contato-bg hidden" id="contato">
-    <div class="contato container">
-      <h2 class="font-1-xxl cor-p1">Contato.</h2>
-      <p class="font-2-l cor-10">Nossa equipe está pronta para tirar suas dúvidas sobre regularização, laudos técnicos e inspeções. Preencha o formulário abaixo ou envie para <a class="cor-p1" href="https://wa.me/5537988536567" target="_blank">(37)98853-6567</a>.</p>
-      <div class="contato-container">
-        <div class="contato-img">
-          <img src="./img/icones/contato/estado-minas.svg" loading="lazy" width="500" height="438" alt="Estados Minas Gerais.">
-        </div>
-        <form class="form" method="post" action="./enviar.php">
-          <div>
-            <label class="cor-9" for="nome">Nome*</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required>
-          </div>
-          <div>
-            <label class="cor-9" for="telefone">Telefone*</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="379999-9999" autocomplete="tel" maxlength="11" required>
-          </div>
-          <div class="col-2">
-            <label class="cor-9" for="email">Email*</label>
-            <input type="email" id="email" name="email" placeholder="contato@email.com" autocomplete="email" required>
-          </div>
-          <div class="col-2">
-            <label class="cor-9" for="mensagem">Mensagem*</label>
-            <textarea rows="3" id="mensagem" name="mensagem" placeholder="O que você precisa ?" required></textarea>
-          </div>
-          <button type="submit" class="botao-vazado hidden col-2">Enviar Mensagem</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer-bg">
-    <div class="footer container">
-      <div class="footer-contato">
-        <h3 class="font-2-l-b cor-p1">CONTATO</h3>
-        <ul class=" font-2-mr cor-10">
-          <li><a class="cor-p2" href="https://wa.me/5537988536567" target="_blank"><strong class="cor-9">Contato Local:</strong> (37) 98853-6567</a></li>
-          <li><a class="cor-p2" href="https://wa.me/5534988248472" target="_blank"><strong class="cor-9">Marcelo Administrador:</strong> (34) 98824-8472</a></li>
-          <li><a class="cor-p2" href="mailto:gerencia.mgiv@hotmail.com">gerencia.mgiv@hotmail.com</a></li>
-          <li>Rodovia BR 262, Km 577 Zona Rural, Córrego Danta -MG</li>
-        </ul>
-      </div>
-      <div class="footer-informacoes">
-        <h3 class="font-2-l-b cor-p1">INFORMAÇÕES</h3>
-        <nav>
-          <ul class="font-1-m cor-10">
+        <nav aria-label="rodapé">
+          <h3>Navegação</h3>
+          <ul>
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#historia">História</a></li>
+            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#local">Local</a></li>
             <li><a href="#avaliacao">Avaliações</a></li>
           </ul>
         </nav>
+        <div>
+          <h3>Endereço</h3>
+          <ul>
+            <li>Rodovia BR 262, Km 577</li>
+            <li>Zona Rural, Córrego Danta, MG</li>
+            <li>Seg a sex, 08:00 às 17:45</li>
+          </ul>
+        </div>
       </div>
-      <p class="footer-copy font-2-m cor-9">2026 © MGIV Inspeção Veicular Ltda. Todos os Direitos Reservados</p>
-      <a class="footer-copy font-1-s cor-9" href="https://devotaviosantos.vercel.app/" target="_blank">Design e Desenvolvimento por Otávio Santos</a>
+      <div class="footer-base">
+        <span>© 2026 MGIV Inspeção Veicular Ltda. Todos os direitos reservados.</span>
+        <a href="https://devotaviosantos.vercel.app/" target="_blank" rel="noopener">Design e desenvolvimento por Otávio Santos</a>
+      </div>
     </div>
   </footer>
 
   <script src="./js/script.js" defer></script>
-  <script src="./js/formulario.js"></script>
+  <script src="./js/formulario.js" defer></script>
 </body>
 
 </html>

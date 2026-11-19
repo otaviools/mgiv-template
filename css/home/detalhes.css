@@ -1,0 +1,189 @@
+/* Detalhes gráficos: só linhas, contornos e cores sólidas */
+
+/* Divisor: título gigante entre linhas finas (ref. Structured / Locomotive) */
+
+.divisor-cta {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--texto);
+  border-top: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+}
+
+/* Preenchimento sólido que entra pela esquerda no hover */
+.divisor-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--azul-400);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.divisor-cta:hover::before,
+.divisor-cta:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.divisor-conteudo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 8px 24px;
+  padding-top: 40px;
+  padding-bottom: 44px;
+}
+
+.divisor-rotulo {
+  grid-column: 1 / -1;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  transition: color 0.4s;
+}
+
+.divisor-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(40px, 9vw, 132px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  transition: color 0.4s;
+}
+
+.divisor-titulo .ponto {
+  transition: color 0.4s;
+}
+
+.divisor-seta {
+  width: clamp(36px, 5vw, 72px);
+  height: clamp(24px, 3.4vw, 48px);
+  margin-bottom: 0.6vw;
+  background: var(--azul-500);
+  -webkit-mask: url("../../img/icones/arrow.svg") center / contain no-repeat;
+  mask: url("../../img/icones/arrow.svg") center / contain no-repeat;
+  transition:
+    transform 0.4s ease,
+    background 0.4s;
+}
+
+.divisor-cta:hover .divisor-titulo,
+.divisor-cta:hover .divisor-titulo .ponto,
+.divisor-cta:focus-visible .divisor-titulo,
+.divisor-cta:focus-visible .divisor-titulo .ponto {
+  color: #fff;
+}
+
+.divisor-cta:hover .divisor-rotulo,
+.divisor-cta:focus-visible .divisor-rotulo {
+  color: var(--azul-100);
+}
+
+.divisor-cta:hover .divisor-seta,
+.divisor-cta:focus-visible .divisor-seta {
+  background: #fff;
+  transform: translateX(10px);
+}
+
+.divisor-cta:focus-visible {
+  outline: none;
+}
+
+/* Sublinhado desenhado à mão no hero */
+
+.hero h1 .destaque {
+  position: relative;
+  display: inline-block;
+  /* O texto é pintado pelo fundo (background-clip: text). Sem este espaço extra,
+     o fundo termina na linha de base e corta as pernas do "g" e do "ç". */
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+
+.sublinhado {
+  position: absolute;
+  left: 0;
+  bottom: -0.04em;
+  width: 100%;
+  height: 0.2em;
+  overflow: visible;
+}
+
+.sublinhado path {
+  fill: none;
+  stroke: var(--azul-400);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: risca 1s cubic-bezier(0.6, 0, 0.2, 1) 0.9s forwards;
+}
+
+@keyframes risca {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Marcas de canto (crop marks) */
+
+.cantos {
+  position: relative;
+}
+
+.cantos::before,
+.cantos::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-color: var(--azul-400);
+  border-style: solid;
+}
+
+.cantos::before {
+  top: -14px;
+  left: 4px;
+  border-width: 1px 0 0 1px;
+}
+
+.cantos::after {
+  right: 4px;
+  bottom: -14px;
+  border-width: 0 1px 1px 0;
+}
+
+/* Divisores tracejados entre itens */
+
+.footer-grid > div + div,
+.footer-grid > nav {
+  padding-left: 24px;
+  border-left: 1px dashed var(--linha);
+}
+
+@media (max-width: 900px) {
+  .footer-grid > div + div,
+  .footer-grid > nav {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .divisor-conteudo {
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+
+  .cantos::before,
+  .cantos::after {
+    display: none;
+  }
+}

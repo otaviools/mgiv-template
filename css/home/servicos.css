@@ -1,99 +1,154 @@
-.servicos-bg {
-  background: url("../../img/icones/dec/bottom-left.svg") no-repeat top 500px
-    left 150px;
-  padding-top: 80px;
-  padding-bottom: 140px;
-  scroll-margin-top: 80px;
+/* Serviços: grade 3x2 com linhas finas (refs. Lemon Squeezy e metic. no Mobbin).
+   O hover só troca cores: nada muda de tamanho ou posição, então a grade não "pula". */
+
+.servicos {
+  background: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
 }
 
-.servicos h2 {
+.servicos-topo {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  letter-spacing: -2%;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  margin-bottom: var(--espaco-bloco);
 }
 
-.servicos h2::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: var(--cor-p5);
+.servicos-topo > p {
+  max-width: 40ch;
+  color: var(--texto-2);
 }
 
-.servicos-cards {
+.servicos-grade {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding-top: 80px;
-  gap: 40px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--linha);
+  border-left: 1px solid var(--linha);
 }
 
-.servico-card {
-  background: var(--cor-0);
-  border-radius: 16px;
-  padding: 32px 44px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid transparent;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.servico-card:hover {
-  border: 1px solid var(--cor-p5);
-  transform: translateY(-5px);
-}
-
-.servico-card-header {
+.servico {
   display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 32px;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 32px;
+  border-right: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+  background: transparent;
+  transition:
+    background 0.25s,
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s);
 }
 
-.icon {
-  width: 52px;
-  height: 52px;
-  background: var(--cor-p5);
-  box-shadow: 4px 4px 0px var(--cor-p1);
-  border-radius: 14px;
+.servico:hover {
+  background: var(--azul-50);
+}
+
+.servico-topo {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.2s ease 0.1s;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 12px;
 }
 
-.servico-card p {
-  transition: color 0.3s ease-in-out;
+.servico-icone {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--azul-100);
+  transition: background 0.25s;
 }
 
-.servico-card:hover p {
-  color: var(--cor-p1);
-}
-.servico-card:hover .icon {
-  transform: scale(1.1) rotate(1deg);
+.servico-icone::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: var(--azul-600);
+  -webkit-mask: var(--icone) center / contain no-repeat;
+  mask: var(--icone) center / contain no-repeat;
+  transition: background 0.25s;
 }
 
-@media (max-width: 1200px) {
-  .servicos-cards {
-    grid-template-columns: repeat(2, 1fr);
+.icone-modificacao {
+  --icone: url("../../img/icones/modificacao.svg");
+}
+.icone-pesado {
+  --icone: url("../../img/icones/pesado.svg");
+}
+.icone-documento {
+  --icone: url("../../img/icones/documento.svg");
+}
+.icone-seguranca {
+  --icone: url("../../img/icones/seguran%C3%A7a.svg");
+}
+.icone-veiculos {
+  --icone: url("../../img/icones/veiculos.svg");
+}
+.icone-laudos {
+  --icone: url("../../img/icones/laudos.svg");
+}
+
+.servico-numero {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--azul-600);
+}
+
+.servico h3 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.servico p {
+  font-size: 15px;
+  color: var(--texto-2);
+}
+
+@media (max-width: 900px) {
+  .servicos-topo {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .servicos-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .servico {
+    padding: 24px;
   }
 }
 
-@media (max-width: 800px) {
-  .servicos-bg {
-    padding-bottom: 80px;
+@media (max-width: 600px) {
+  .servicos-grade {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .servicos-cards {
-    grid-template-columns: 1fr;
-    padding-top: 40px;
+  .servico {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 4px 16px;
+    padding: 20px 16px;
   }
-  .servico-card {
-    padding: 32px;
+
+  .servico-topo {
+    grid-row: span 2;
+    margin: 0;
   }
-  .servico-card:hover {
-    border: 1px solid var(--cor-0);
+
+  .servico-numero {
+    display: none;
+  }
+
+  .servico h3 {
+    align-self: end;
+    font-size: 19px;
   }
 }

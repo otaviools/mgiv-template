@@ -1,135 +1,275 @@
-.local-bg {
-  background: var(--cor-2) url("../../img/icones/dec/bottom-right.svg")
-    no-repeat bottom 600px right 200px;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  scroll-margin-top: 80px;
+/* Localização: layout editorial claro (refs. Samara e Little Amps Coffee) */
+
+/* Degradê azul suave no rodapé, que continua no topo de Avaliações */
+.local {
+  background: linear-gradient(to bottom, transparent 55%, var(--azul-100) 100%);
 }
 
-.local h2 {
-  margin-bottom: 40px;
+.local-topo {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  letter-spacing: -2%;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  padding-bottom: calc(var(--espaco-bloco) / 2);
+  border-bottom: 1px solid var(--linha);
 }
 
-.local h2::before {
-  content: "";
-  display: inline-block;
+/* Aberto agora / Fechado (atualizado pelo script) */
+.local-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--texto-2);
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  background: var(--superficie);
+}
+
+.local-status i {
+  position: relative;
   width: 8px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: var(--cor-p5);
+  height: 8px;
+  border-radius: 50%;
+  background: var(--texto-3);
 }
 
-.local-container {
+.local-status b {
+  font-weight: 500;
+  color: var(--texto);
+}
+
+.local-status.aberto i {
+  background: var(--sucesso);
+}
+
+.local-status.aberto i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--sucesso);
+  animation: pulso 2s ease-out infinite;
+}
+
+.local-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+  margin-top: calc(var(--espaco-bloco) / 2);
 }
 
-.local-card {
-  grid-column: 2/12;
+/* Dados em lista com linhas finas */
+
+.local-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.local-dados {
+  margin: 0;
+}
+
+.local-dados > div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 132px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--linha);
 }
 
-.local-img img {
-  border-radius: 20px 0px 0px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.local-dados > div:first-child {
+  padding-top: 0;
 }
 
-.local-conteudo {
-  background-color: var(--cor-0);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 60px 40px;
-  border-radius: 0px 20px 20px 0px;
-}
-
-.local-conteudo h3 {
-  margin-bottom: 20px;
+.local-dados dt {
   display: flex;
   align-items: center;
+  gap: 12px;
+  font-family: "Satoshi", ui-serif, Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-3);
 }
-.local-conteudo h3::before {
+
+/* Ícone em quadradinho azul-claro, colorido via máscara */
+.local-icone {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--azul-100);
+}
+
+.local-icone::before {
   content: "";
-  display: inline-block;
-  width: 30px;
-  height: 12px;
-  margin-right: 12px;
-  background-color: var(--cor-p5);
+  width: 16px;
+  height: 16px;
+  background: var(--azul-600);
+  -webkit-mask: var(--icone) center / contain no-repeat;
+  mask: var(--icone) center / contain no-repeat;
 }
 
-.local-conteudo p:nth-child(2) {
+/* URLs declaradas aqui para resolverem a partir deste CSS */
+.icone-local {
+  --icone: url("../../img/icones/local/local.svg");
+}
+.icone-relogio {
+  --icone: url("../../img/icones/local/relogio.svg");
+}
+.icone-acesso {
+  --icone: url("../../img/icones/local/acesso.svg");
+}
+
+.local-dados dd {
+  margin: 0;
+  color: var(--texto);
+}
+
+.local-horario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+}
+
+/* Separador entre os dias e o horário */
+.local-horario span + span::before {
+  margin-right: 10px;
+  color: var(--texto-3);
+}
+
+.local-horario span + span {
+  font-variant-numeric: tabular-nums;
+  color: var(--azul-600);
+}
+
+/* Mapa de MG com o pino (coluna da direita) */
+
+.local-mapa {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 32px 52px;
+  border-radius: 20px;
+}
+
+.local-mapa-img {
+  position: relative;
+  width: 100%;
   max-width: 340px;
-  margin-bottom: 34px;
 }
 
-.local-conteudo p:nth-child(3) {
+.local-mapa img {
+  width: 100%;
+  opacity: 0.35;
+}
+
+.local-pino {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.local-pino i {
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--azul-500);
+}
+
+.local-pino i::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--azul-500);
+  animation: pulso 2s ease-out infinite;
+}
+
+/* Etiqueta à direita do pino, ligada por uma linha reta que sai do centro dele */
+.local-pino-tag {
+  position: absolute;
+  left: 26px;
+  top: 0;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: #fff;
+  border-radius: 8px;
+  background: var(--azul-900);
+  transform: translateY(-50%);
+}
+
+.local-pino-tag::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 18px;
+  height: 1px;
+  background: var(--azul-900);
+}
+
+.local-mapa-legenda {
+  position: absolute;
+  left: 24px;
+  bottom: 18px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+}
+
+.local-botoes {
   display: flex;
-  gap: 10px;
-  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
 }
 
-.local-conteudo p:nth-child(4) {
-  display: flex;
-  gap: 10px;
-  max-width: 274px;
-  margin-bottom: 52px;
+@media (max-width: 900px) {
+  .local-topo {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .local-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .local-mapa {
+    min-height: 0;
+    padding: 32px 20px 48px;
+  }
 }
 
-@media (min-width: 451px) and (max-width: 1201px) {
-  .local-card {
-    grid-template-columns: 1fr;
-  }
-  .local-img img {
-    content: url("../../img/fotos/mapa-2.svg");
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
-  }
-  .local-conteudo {
-    padding: 60px 30px;
-    border-radius: 0px 0px 20px 20px;
-  }
-  .local-conteudo p:nth-child(2) {
-    max-width: none;
-    margin-bottom: 34px;
-  }
-  .local-conteudo p:nth-child(4) {
-    display: flex;
+@media (max-width: 600px) {
+  .local-dados > div {
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
-    max-width: none;
-    margin-bottom: 52px;
   }
-}
 
-@media (max-width: 450px) {
-  .local-bg {
-    padding-top: 70px;
-    padding-bottom: 40px;
-    scroll-margin-top: 60px;
+  .local-botoes .botao {
+    flex: 1 1 140px;
   }
-  .local h2 {
-    margin-bottom: 40px;
-  }
-  .local-container {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .local-card {
-    grid-template-columns: 1fr;
-  }
-  .local-img img {
-    content: url("../../img/fotos/mapa.svg");
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
-  }
-  .local-conteudo {
-    padding: 60px 30px;
-    border-radius: 0px 0px 20px 20px;
+
+  .local-pino-tag {
+    font-size: 12px;
   }
 }

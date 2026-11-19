@@ -1,0 +1,102 @@
+/* Detalhes de fundo */
+
+/* Linhas-guia verticais no fundo de toda a página */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--linha), var(--linha)) calc(50% - min(600px, 50vw)) 0 / 1px 100% no-repeat,
+    linear-gradient(var(--linha), var(--linha)) calc(50% + min(600px, 50vw) - 1px) 0 / 1px 100% no-repeat;
+  opacity: 0.6;
+}
+
+main > section:not(.hero),
+.footer {
+  isolation: isolate;
+}
+
+/* Grade quadriculada que some nas bordas */
+.fundo-grade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(42, 86, 135, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 86, 135, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 30%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(70% 60% at 50% 30%, #000 0%, transparent 75%);
+}
+
+/* Grade surge depois do degradê do topo, sem marcar a divisa */
+.avaliacao.fundo-grade::before {
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0, #000 200px),
+    radial-gradient(80% 70% at 50% 18%, #000 0%, transparent 80%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0, #000 200px),
+    radial-gradient(80% 70% at 50% 18%, #000 0%, transparent 80%);
+  mask-composite: intersect;
+}
+
+/* Brilho azul desfocado */
+.brilho {
+  position: absolute;
+  z-index: -1;
+  width: 520px;
+  height: 520px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(58, 152, 255, 0.22) 0%, rgba(58, 152, 255, 0) 70%);
+  animation: flutua 14s ease-in-out infinite alternate;
+}
+
+.brilho-direita {
+  top: -120px;
+  right: -180px;
+}
+
+.brilho-esquerda {
+  bottom: -160px;
+  left: -200px;
+  animation-delay: -7s;
+}
+
+/* Marca d'água com o nome da empresa */
+.marca-dagua {
+  position: absolute;
+  right: -2vw;
+  bottom: -0.18em;
+  z-index: -1;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(120px, 22vw, 320px);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(42, 86, 135, 0.1);
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes flutua {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-40px, 30px) scale(1.08); }
+}
+
+@media (max-width: 900px) {
+  body::before {
+    display: none;
+  }
+
+  .brilho {
+    width: 320px;
+    height: 320px;
+  }
+}

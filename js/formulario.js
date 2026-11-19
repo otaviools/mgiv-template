@@ -1,5 +1,5 @@
 function resetarBotao(botao) {
-  botao.textContent = "Enviar Mensagem";
+  botao.textContent = "Enviar mensagem";
   botao.classList.remove("botao-sucesso");
   botao.disabled = false;
 }
@@ -65,6 +65,13 @@ if (formulario) {
     }
 
     dados.set("telefone", telefone);
+
+    // O backend recebe só "mensagem": o serviço escolhido vai no início dela
+    const servico = dados.get("servico");
+    if (servico) {
+      dados.set("mensagem", `Serviço: ${servico}\n\n${mensagem}`);
+      dados.delete("servico");
+    }
 
     botao.textContent = "Enviando...";
     botao.disabled = true;

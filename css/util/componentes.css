@@ -1,105 +1,195 @@
-.container {
-  box-sizing: border-box;
-  max-width: 1200px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
+.wrap {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.botao {
+.secao {
+  position: relative;
+  padding: var(--espaco-secao) 0;
+}
+
+/* Títulos */
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+}
+
+h2 {
+  font-size: clamp(32px, 4.4vw, 52px);
+}
+
+/* Assinatura MGIV: ponto final azul */
+.ponto {
+  color: var(--azul-400);
+}
+
+.eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 20px 36px;
-  background: linear-gradient(#72b5ff, #3a98ff);
-  box-shadow: 8px 8px 0px var(--cor-p1);
+  gap: 10px;
+  font-family: var(--fonte-titulo);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cor-p1);
-  font:
-    500 1.125rem/1.35 "Poppins",
-    sans-serif;
-  max-width: max-content;
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
+  color: var(--azul-600);
 }
 
-.botao::after {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-image: url("../../img/icones/arrow.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform 0.3s ease-in-out;
+.eyebrow-num {
+  order: -1;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.eyebrow + h2 {
+  margin-top: 16px;
+}
+
+/* Botões: Solid Glass (cor única, vidro espesso com brilho interno) */
+
+.botao {
+  --cor: var(--azul-500);
+  --cor-hover: #2680e0;
+  --brilho: rgba(255, 255, 255, 0.38);
+  --sombra-base: rgba(12, 26, 43, 0.6);
+  /* Curva simétrica: começa e termina devagar, igual na ida e na volta */
+  --suave: cubic-bezier(0.45, 0, 0.25, 1);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 20px;
+  font-family: var(--fonte-titulo);
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: var(--cor);
+  background-clip: padding-box;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    inset 0 1px 0 var(--brilho),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.07),
+    0 1px 2px rgba(12, 26, 43, 0.1),
+    0 8px 18px -9px var(--sombra-base);
+  cursor: pointer;
+  transition:
+    background-color 0.5s var(--suave),
+    border-color 0.5s var(--suave),
+    box-shadow 0.5s var(--suave),
+    transform 0.5s var(--suave),
+    color 0.5s var(--suave);
 }
 
 .botao:hover {
-  background: var(--cor-p5);
+  background-color: var(--cor-hover);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 var(--brilho),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.07),
+    0 1px 2px rgba(12, 26, 43, 0.1),
+    0 12px 24px -10px var(--sombra-base);
 }
 
-.botao:hover::after {
-  transform: translateX(6px);
+.botao:active {
+  transform: translateY(0);
 }
 
-.botao-vazado {
-  display: inline-flex;
-  align-items: center;
-  gap: 0px;
-  padding: 20px 36px;
-  border: 1px solid var(--cor-p1);
-  background-color: transparent;
-  color: var(--cor-p1);
-  box-shadow: 8px 8px 0px var(--cor-p1);
-  text-transform: uppercase;
-  font:
-    500 1.125rem/1.35 "Poppins",
-    sans-serif;
-  max-width: max-content;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.botao-vazado::before {
+.botao-seta::after {
   content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--cor-p5);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-  z-index: -1;
+  width: 18px;
+  height: 12px;
+  background: currentColor;
+  -webkit-mask: url("../../img/icones/arrow.svg") center / contain no-repeat;
+  mask: url("../../img/icones/arrow.svg") center / contain no-repeat;
+  transition: transform 0.5s var(--suave);
 }
 
-.botao-vazado:hover::before {
-  transform: scaleX(1);
+.botao-seta:hover::after {
+  transform: translateX(4px);
+}
+
+.botao-claro {
+  --cor: #f2f6fb;
+  --cor-hover: #ffffff;
+  --brilho: #ffffff;
+  color: var(--azul-900);
+  border-color: rgba(242, 246, 251, 0.67);
+}
+
+/* Variante de vidro translúcido, para fundos escuros e fotos */
+.botao-vazado {
+  --cor: rgba(255, 255, 255, 0.08);
+  --cor-hover: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .botao-vazado:hover {
-  color: var(--cor-p1);
-  border-color: var(--cor-p5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.botao-sucesso {
-  background-color: #1fc068;
-  color: white;
-}
-
-button:disabled {
+.botao:disabled {
+  cursor: wait;
   opacity: 0.7;
-  cursor: not-allowed;
 }
 
-@media (max-width: 800px) {
-  .botao::after {
+.botao-sucesso,
+.botao-sucesso:hover {
+  --cor: var(--sucesso);
+  --cor-hover: var(--sucesso);
+}
+
+/* Textura de pontos (decoração do site anterior) */
+/* Bem suave: atrás do conteúdo e com as bordas se apagando */
+.pontilhado {
+  position: absolute;
+  z-index: -1;
+  width: 136px;
+  height: 136px;
+  pointer-events: none;
+  background-image: radial-gradient(var(--azul-300) 1.5px, transparent 1.6px);
+  background-size: 17px 17px;
+  opacity: 0.35;
+  -webkit-mask-image: radial-gradient(circle, #000 35%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 35%, transparent 72%);
+}
+
+.pontilhado-topo-dir { top: 40px; right: 3%; }
+.pontilhado-topo-esq { top: 40px; left: 3%; }
+.pontilhado-base-dir { right: 3%; bottom: 40px; }
+.pontilhado-base-esq { bottom: 40px; left: 3%; }
+
+@media (max-width: 900px) {
+  .pontilhado {
     display: none;
   }
+}
 
-  .botao,
-  .botao-vazado {
-    padding: 20px 28px;
-    gap: 0px;
-  }
+.nowrap {
+  white-space: nowrap;
 }
