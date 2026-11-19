@@ -1,76 +1,46 @@
 :root {
-  --cor-0: #fff;
-  --cor-1: #f7f7f7;
-  --cor-2: #ededed;
-  --cor-3: #dedede;
-  --cor-4: #cccccc;
-  --cor-5: #b2b2b2;
-  --cor-6: #9c9c9c;
-  --cor-7: #717171;
-  --cor-8: #595959;
-  --cor-9: #404040;
-  --cor-10: #2e2e2e;
-  --cor-11: #111111;
-  --cor-12: #000000;
-  --cor-p1: #2a5687;
-  --cor-p2: #1a62b2;
-  --cor-p3: #1e73d0;
-  --cor-p4: #3a98ff;
-  --cor-p5: #72b5ff;
+  /* Azuis da marca (logo MGIV) */
+  --azul-900: #0c1a2b;
+  --azul-800: #12263d;
+  --azul-700: #2a5687;
+  --azul-600: #1a62b2;
+  --azul-500: #1e73d0;
+  --azul-400: #3a98ff;
+  --azul-300: #72b5ff;
+  --azul-100: #e3effd;
+  --azul-50: #f3f8fe;
+
+  --gradiente: linear-gradient(135deg, #3a98ff 0%, #1e73d0 55%, #1a62b2 100%);
+  --gradiente-claro: linear-gradient(180deg, #72b5ff, #3a98ff);
+
+  /* Neutros levemente azulados */
+  --fundo: #f6f9fc;
+  --fundo-2: #edf3fa;
+  --superficie: #ffffff;
+  --texto: #0c1a2b;
+  --texto-2: #46546a;
+  --texto-3: #8592a6;
+  --linha: #dfe7f1;
+
+  /* Atalhos usados nos componentes */
+  --marca: var(--azul-700);
+  --marca-2: var(--azul-600);
+  --marca-clara: var(--azul-300);
+  --marinho: var(--azul-900);
+  --sucesso: #1f8a4c;
+
+  /* Ritmo vertical: o mesmo em todas as seções */
+  --espaco-secao: 120px; /* acima e abaixo de cada seção */
+  --espaco-bloco: 56px;  /* entre o título da seção e o conteúdo, e entre blocos */
+
+  --raio: 16px;
+  --largura: 1200px;
+  --header: 72px;
 }
 
-.cor-0 {
-  color: var(--cor-0);
-}
-.cor-1 {
-  color: var(--cor-1);
-}
-.cor-2 {
-  color: var(--cor-2);
-}
-.cor-3 {
-  color: var(--cor-3);
-}
-.cor-4 {
-  color: var(--cor-4);
-}
-.cor-5 {
-  color: var(--cor-5);
-}
-.cor-6 {
-  color: var(--cor-6);
-}
-.cor-7 {
-  color: var(--cor-7);
-}
-.cor-8 {
-  color: var(--cor-8);
-}
-.cor-9 {
-  color: var(--cor-9);
-}
-.cor-10 {
-  color: var(--cor-10);
-}
-.cor-11 {
-  color: var(--cor-11);
-}
-.cor-12 {
-  color: var(--cor-12);
-}
-
-.cor-p1 {
-  color: var(--cor-p1);
-}
-.cor-p2 {
-  color: var(--cor-p2);
-}
-.cor-p3 {
-  color: var(--cor-p3);
-}
-.cor-p4 {
-  color: var(--cor-p4);
-}
-.cor-p5 {
-  color: var(--cor-p5);
+@media (max-width: 900px) {
+  :root {
+    --espaco-secao: 80px;
+    --espaco-bloco: 40px;
+  }
 }

@@ -1,164 +1,243 @@
-.header-bg {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-}
+/* Header (ref. AngelList no Mobbin): transparente sobre a foto do hero,
+   links numa pílula translúcida no centro. Ao rolar (.scrolled) vira branco sólido. */
 
 .header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 80px;
-  padding-top: 40px;
-  padding-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-.header.scrolled {
-  padding: 20px 60px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.header-menu {
-  display: flex;
-  gap: 40px;
-}
-
-.header-menu a {
-  color: var(--cor-9);
-  position: relative;
-  display: inline-block;
-  padding: 16px 0px;
-  transition: all 0.2s ease-in-out;
-}
-
-.header-menu a:hover {
-  color: var(--cor-p4);
-}
-
-.header-menu li:last-child {
-  display: flex;
-  align-items: center;
-}
-
-/*SideBar Mobile*/
-
-.icon-menu-open,
-.icon-menu-close {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 30px;
-}
-
-.icon-menu-open div,
-.icon-menu-close div {
-  height: 4px;
-  background-color: var(--cor-p3);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.icon-menu-close {
-  position: relative;
-  height: 30px;
-}
-
-.icon-menu-close .line-1 {
-  transform: rotate(45deg) translate(5px, 8px);
-}
-
-.icon-menu-close .line-2 {
-  opacity: 0;
-}
-
-.icon-menu-close .line-3 {
-  transform: rotate(-45deg) translate(5px, -8px);
-}
-
-.sideBar {
+  --suave: cubic-bezier(0.22, 1, 0.36, 1);
   position: fixed;
   top: 0;
+  left: 0;
   right: 0;
-  height: 100vh;
-  width: 200px;
-  z-index: 999;
-  background: var(--cor-1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 40px 30px;
-  justify-content: flex-start;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(100%);
-  transition: all 0.3s ease;
-}
-
-.sideBar.active {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateX(0);
-}
-
-.sideBar li {
-  opacity: 0;
-  transform: translateX(20px);
+  z-index: 100;
+  color: #fff;
+  background: transparent;
+  border-bottom: 1px solid transparent;
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    background-color 0.45s var(--suave),
+    border-color 0.45s var(--suave),
+    color 0.45s var(--suave);
 }
 
-.sideBar.active li {
+.header.scrolled,
+.header:has(.menu.aberto) {
+  color: var(--texto);
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-bottom-color: var(--linha);
+}
+
+.header-conteudo {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  height: var(--header);
+}
+
+.logo {
+  justify-self: start;
+}
+
+/* Versão para fundo escuro sobre a foto, colorida no header sólido.
+   As duas ficam empilhadas e trocam por opacidade. */
+.logo {
+  display: grid;
+}
+
+.logo img {
+  grid-area: 1 / 1;
+  width: auto;
+  height: 44px;
+  transition: opacity 0.45s var(--suave);
+}
+
+.logo-cor {
+  opacity: 0;
+}
+
+.header.scrolled .logo-cor,
+.header:has(.menu.aberto) .logo-cor {
   opacity: 1;
-  transform: translateX(0);
 }
 
-.sideBar.active li:nth-child(2) {
-  transition-delay: 0.1s;
-}
-.sideBar.active li:nth-child(3) {
-  transition-delay: 0.2s;
-}
-.sideBar.active li:nth-child(4) {
-  transition-delay: 0.3s;
-}
-.sideBar.active li:nth-child(5) {
-  transition-delay: 0.4s;
-}
-.sideBar.active li:nth-child(6) {
-  transition-delay: 0.5s;
-}
-.sideBar.active li:nth-child(7) {
-  transition-delay: 0.6s;
+.header.scrolled .logo-branca,
+.header:has(.menu.aberto) .logo-branca {
+  opacity: 0;
 }
 
-@media (max-width: 860px) {
-  .header {
-    padding: 20px;
+/* Pílula translúcida com os links */
+.menu {
+  display: flex;
+  gap: 8px;
+  padding: 5px;
+  font-family: var(--fonte-titulo);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition:
+    background-color 0.45s var(--suave),
+    border-color 0.45s var(--suave);
+}
+
+.header.scrolled .menu {
+  border-color: var(--linha);
+  background: var(--fundo-2);
+}
+
+.menu a:not(.botao) {
+  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  transition:
+    background-color 0.35s var(--suave),
+    color 0.35s var(--suave);
+}
+
+.menu a:not(.botao):hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.menu a.ativo {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.header.scrolled .menu a:not(.botao) {
+  color: var(--texto-2);
+}
+
+.header.scrolled .menu a:not(.botao):hover {
+  color: var(--texto);
+  background: rgba(42, 86, 135, 0.08);
+}
+
+.header.scrolled .menu a.ativo {
+  color: #fff;
+  background: var(--azul-500);
+}
+
+.menu-cta,
+.menu-toggle {
+  display: none;
+}
+
+.header-cta {
+  justify-self: end;
+  height: 40px;
+}
+
+/* No topo o botão é branco; com o header sólido volta ao azul */
+.header:not(.scrolled) .header-cta {
+  --cor: #f2f6fb;
+  --cor-hover: #ffffff;
+  --brilho: #ffffff;
+  color: var(--azul-900);
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+  .header-conteudo {
+    display: flex;
+    justify-content: space-between;
   }
 
-  .header.scrolled {
-    padding: 20px 30px;
-    background-color: rgb(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(50px);
-  }
-  .logo {
-    width: 140px;
-  }
-  .hideMobile {
+  /* No celular o botão "Agendar" fica só dentro do menu */
+  .header-cta {
     display: none;
   }
-}
 
-@media (min-width: 861px) {
-  .hideDesktop {
-    display: none;
+  .menu-toggle {
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.3s;
+  }
+
+  .header.scrolled .menu-toggle,
+  .header:has(.menu.aberto) .menu-toggle {
+    color: var(--azul-700);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .menu,
+  .header.scrolled .menu {
+    position: fixed;
+    inset: var(--header) 0 auto 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 28px;
+    font-size: 22px;
+    color: var(--texto);
+    border: 0;
+    border-bottom: 1px solid var(--linha);
+    border-radius: 0;
+    background: #fff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: 0 18px 36px rgba(12, 26, 43, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.25s,
+      transform 0.25s,
+      visibility 0.25s;
+  }
+
+  /* Precisa do .header.scrolled também: senão a regra acima (mais específica)
+     mantém o menu invisível depois que a página rola */
+  .menu.aberto,
+  .header.scrolled .menu.aberto {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .menu a:not(.botao),
+  .header.scrolled .menu a:not(.botao) {
+    padding: 16px 0;
+    color: var(--texto);
+    border-bottom: 1px solid var(--linha);
+    border-radius: 0;
+    background: none;
+  }
+
+  .menu a.ativo,
+  .header.scrolled .menu a.ativo {
+    color: var(--azul-600);
+    background: none;
+  }
+
+  .menu-cta {
+    display: inline-flex;
+    margin-top: 24px;
   }
 }

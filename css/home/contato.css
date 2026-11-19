@@ -1,72 +1,137 @@
-.contato-bg {
-  padding-top: 140px;
-  padding-bottom: 180px;
-  scroll-margin-top: 30px;
-  background-color: var(--cor-0);
+.contato {
+  overflow: hidden;
+  background:
+    radial-gradient(60% 80% at 50% 0%, var(--azul-100) 0%, transparent 70%),
+    var(--fundo-2);
 }
 
-.contato h2 {
-  margin-bottom: 24px;
+.contato .pontilhado:first-of-type {
+  top: 64px;
+  left: 4%;
+}
+
+.contato .pontilhado:last-of-type {
+  right: 4%;
+  bottom: 64px;
+}
+
+/* Agendamento (ref. Antimetal no Mobbin): texto solto à esquerda, formulário em card à direita */
+
+.agenda {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 72px;
+}
+
+.agenda-info h2 {
+  font-size: clamp(32px, 4vw, 48px);
+}
+
+.agenda-texto {
+  max-width: 38ch;
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--texto-2);
+}
+
+.agenda-passos {
+  display: grid;
+  gap: 20px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agenda-passos li {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
-.contato h2::before {
-  content: "";
-  width: 8px;
-  height: 40px;
-  background: var(--cor-p5);
-  display: inline-block;
-  border-radius: 10px;
-}
-
-.contato p {
-  margin-bottom: 80px;
-}
-
-.contato p > a {
-  text-decoration: underline;
-  text-decoration-color: currentColor;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  transition: all 0.2s ease-in-out;
-}
-
-.contato p > a:hover {
-  color: var(--cor-p5);
-}
-
-.contato-container {
+.agenda-icone {
+  flex: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--azul-100);
 }
 
-@media (max-width: 450px) {
-  .contato-bg {
-    padding-top: 70px;
-    padding-bottom: 80px;
-    scroll-margin-top: 60px;
-  }
-
-  .contato-container {
-    grid-template-columns: 1fr;
-  }
-  .contato p {
-    margin-bottom: 40px;
-    max-width: 340px;
-  }
-
-  .contato-img img {
-    display: none;
-  }
+.agenda-icone::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: var(--azul-600);
+  -webkit-mask: var(--icone) center / contain no-repeat;
+  mask: var(--icone) center / contain no-repeat;
 }
 
-@media (min-width: 451px) and (max-width: 1200px) {
-  .contato-container {
-    grid-template-columns: 1fr;
+.icone-mensagem { --icone: url("../../img/icones/mensagem.svg"); }
+.icone-check { --icone: url("../../img/icones/check.svg"); }
+
+.agenda-passos b {
+  display: block;
+  font-weight: 500;
+}
+
+.agenda-passos p {
+  font-size: 14px;
+  color: var(--texto-2);
+}
+
+.agenda-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin-top: 36px;
+  padding-top: 24px;
+  font-size: 15px;
+  border-top: 1px solid var(--linha);
+}
+
+.agenda-whatsapp {
+  font-weight: 500;
+  color: var(--azul-600);
+  transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.agenda-whatsapp:hover {
+  color: var(--azul-700);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.agenda-horario {
+  color: var(--texto-3);
+}
+
+/* Formulário em card branco */
+
+.agenda-form {
+  padding: 40px;
+  border: 1px solid var(--linha);
+  border-radius: 24px;
+  background: var(--superficie);
+}
+
+.form-aviso {
+  margin-top: -4px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--texto-3);
+}
+
+@media (max-width: 900px) {
+  .agenda {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espaco-bloco);
   }
-  .contato-img img {
-    display: none;
+
+  .agenda-form {
+    padding: 28px 20px;
+    border-radius: 20px;
   }
 }

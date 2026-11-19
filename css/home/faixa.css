@@ -1,0 +1,43 @@
+/* Faixa em movimento com os serviços */
+.faixa {
+  overflow: hidden;
+  padding: 18px 0;
+  color: #fff;
+  background: var(--gradiente);
+}
+
+.faixa-trilho {
+  display: flex;
+  width: max-content;
+  animation: faixa 32s linear infinite;
+}
+
+.faixa:hover .faixa-trilho {
+  animation-play-state: paused;
+}
+
+.faixa-grupo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-right: 40px;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.faixa-grupo span::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 40px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: var(--azul-300);
+}
+
+@keyframes faixa {
+  to { transform: translateX(-50%); }
+}

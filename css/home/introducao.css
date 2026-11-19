@@ -1,96 +1,241 @@
-.introducao-bg {
-  background: url("../../img/icones/dec/bottom-left.svg") no-repeat top 500px
-    left 200px;
-  padding-top: 280px;
-  padding-bottom: 30px;
-  scroll-margin-top: 80px;
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #fff;
+  background: var(--azul-900);
 }
 
-.introducao {
-  gap: 0px;
+.hero picture,
+.hero picture img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
-.introducao-conteudo {
+/* Imagem estática. Ampliada a partir do canto superior esquerdo para a carreta
+   ficar embaixo e à direita, longe do texto. 1.38 mantém a foto (2000 px)
+   sem esticar além da resolução original numa tela de 1440 px. */
+.hero picture img {
+  transform: scale(1.38);
+  transform-origin: 0% 0%;
+}
+
+/* Sobreposição no azul-marinho da marca */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(12, 26, 43, 0.82) 0%, rgba(12, 26, 43, 0.55) 40%, rgba(12, 26, 43, 0.1) 70%),
+    linear-gradient(180deg, rgba(12, 26, 43, 0.55) 0%, rgba(12, 26, 43, 0) 55%);
+}
+
+/* Foto em sépia com céu claro: o texto à esquerda depende do escurecimento abaixo */
+.hero-texto {
+  max-width: 640px;
+}
+
+.hero-conteudo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  /* Conteúdo no início do hero, logo abaixo do header */
+  padding-top: calc(var(--header) + clamp(56px, 11vh, 120px));
+  padding-bottom: 96px;
+}
+
+.hero-texto > * {
+  animation: hero-entrada 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-texto > :nth-child(2) {
+  animation-delay: 0.12s;
+}
+.hero-texto > :nth-child(3) {
+  animation-delay: 0.24s;
+}
+.hero-texto > :nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 7px 14px 7px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(114, 181, 255, 0.4);
+  border-radius: 999px;
+  background: rgba(30, 115, 208, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.selo i {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--azul-300);
+}
+
+.selo i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--azul-300);
+  animation: pulso 2s ease-out infinite;
+}
+
+.hero h1 {
+  max-width: 13ch;
+  font-size: clamp(42px, 6.6vw, 88px);
+}
+
+.hero h1 .destaque {
+  background: var(--gradiente-claro);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 34ch;
+  margin: 22px 0 36px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Indicador de rolagem */
+.hero-scroll {
+  position: absolute;
+  right: 24px;
+  bottom: 40px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-self: center;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.introducao-botoes {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  margin-top: 60px;
-  justify-content: center;
+.hero-scroll::after {
+  content: "";
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(var(--azul-300), transparent);
+  animation: desce 2s ease-in-out infinite;
 }
 
-.introducao-botoes a {
-  animation: flutuar 5s ease-in-out infinite 1.5s;
+@keyframes hero-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.introducao-conteudo h1 {
-  margin-bottom: 36px;
-  letter-spacing: -5%;
-  max-width: 916px;
+@keyframes pulso {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
 }
 
-.introducao-conteudo p {
-  max-width: 720px;
-}
-
-@keyframes flutuar {
+@keyframes desce {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: scaleY(0.4);
+    transform-origin: top;
   }
   50% {
-    transform: translateY(-10px);
+    transform: scaleY(1);
+    transform-origin: top;
   }
 }
 
-@media (min-width: 800px) and (max-width: 1600px) {
-  .introducao-bg {
-    background: none;
+@media (max-width: 600px) {
+  /* No celular o conteúdo fica centralizado na altura do hero */
+  .hero {
+    align-items: center;
   }
-  .introducao {
-    padding-top: 100px;
+
+  .hero-conteudo {
+    padding-top: calc(var(--header) + 32px);
+    padding-bottom: 48px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Botões lado a lado, mesma largura, sem a seta */
+  .hero-botoes {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .hero-botoes .botao {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 12px;
+    white-space: nowrap;
+  }
+
+  .hero-botoes .botao-seta::after {
+    display: none;
+  }
+
+  /* No celular o botão mostra só "Agendar" */
+  .hero-botoes .so-desktop {
+    display: none;
+  }
+
+  .hero-scroll {
+    display: none;
   }
 }
 
-@media (min-width: 450px) and (max-width: 1600px) {
-  .introducao-bg {
-    background: none;
-    padding-top: 180px;
+/* No celular o texto ocupa a largura toda e a foto mostra a carreta na estrada */
+@media (max-width: 900px) {
+  .hero-texto {
+    max-width: none;
   }
-}
 
-@media (max-width: 450px) {
-  .introducao-bg {
-    background: none;
-    padding-top: 220px;
-    padding-bottom: 40px;
+  /* No celular a carreta fica atrás do texto: foto sem ampliação e
+     escurecimento mais forte para manter a leitura */
+  .hero picture img {
+    transform: none;
+    object-position: 38% 50%;
   }
-  .introducao-conteudo {
-    text-align: left;
-    align-items: flex-start;
-  }
-  .introducao h1 {
-    max-width: 375px;
-  }
-  .introducao p {
-    max-width: 350px;
-  }
-  .introducao-botoes {
-    justify-content: flex-start;
-    margin-top: 40px;
-  }
-}
 
-@media (max-width: 375px) {
-  .introducao h1 {
-    font-size: 1.8rem;
+  .hero::after {
+    background: rgba(12, 26, 43, 0.62);
   }
 }

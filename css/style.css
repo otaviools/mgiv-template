@@ -1,6 +1,6 @@
-@import "./global/global.css";
 @import "./util/cores.css";
 @import "./util/tipografia.css";
+@import "./global/global.css";
 @import "./util/componentes.css";
 @import "./util/formulario.css";
 
@@ -8,13 +8,15 @@
 
 @import "./global/header.css";
 @import "./global/footer.css";
+@import "./global/fundo.css";
 
 /* Home */
 
 @import "./home/introducao.css";
+@import "./home/faixa.css";
 @import "./home/sobre.css";
 @import "./home/servicos.css";
-@import "./home/avaliacao.css";
 @import "./home/local.css";
-@import "./home/fotos.css";
+@import "./home/avaliacao.css";
 @import "./home/contato.css";
+@import "./home/detalhes.css";
